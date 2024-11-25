@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 422dd83486a083e48a6fc66cc8a2f233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grid: {fileID: 4026518823469519113, guid: eed80c9319e8ce046aece9bf56358732, type: 3}
   speed: 5
   rb2d: {fileID: 1650822889111616807}
 --- !u!212 &5396919180261203273
