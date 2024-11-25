@@ -18,4 +18,11 @@ public class player : MonoBehaviour
 
         rb2d.velocity = moveInput * speed;
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "N_teleport")
+        {
+            Debug.Log(collision.gameObject.transform.parent.gameObject.transform.parent.gameObject);
+        }
+    }
 }
