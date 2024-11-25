@@ -336,6 +336,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1029492190559925007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 300107738861803192}
+  m_Layer: 0
+  m_Name: rooms
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &300107738861803192
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029492190559925007}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7707625070854426732}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1489127499600290899
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,6 +1093,7 @@ Transform:
   - {fileID: 9003160147434223547}
   - {fileID: 240440406778430798}
   - {fileID: 2794852205933467445}
+  - {fileID: 300107738861803192}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1079,6 +1111,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NWSE_BasicRoomPrefab: {fileID: 3932423674508711380, guid: 5a49da18f1a40c848abbb8ba63c3cf8d, type: 3}
   NWE_BasicRoomPrefab: {fileID: 8965647743034911116, guid: 26997534bd9e3934fb3765b2a000e53b, type: 3}
+  NSE_BasicRoomPrefab: {fileID: 34306567201951988, guid: e7fc3b40793cb7b41b32ccf197ad4362, type: 3}
+  NWS_BasicRoomPrefab: {fileID: 5042680288271579283, guid: b3bbb0ef064d32146978fb08bd344c0f, type: 3}
+  WSE_BasicRoomPrefab: {fileID: 8570382918380480551, guid: a140aafd616063a4facb034da5271231, type: 3}
   Grid:
   - {fileID: 5628329360519171599}
   - {fileID: 1961340138450619040}
