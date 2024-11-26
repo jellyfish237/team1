@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private float speed = 1.5f;
+    [SerializeField] public float speed;
     private GameObject player;
 
     private bool hasLineOfSight = false;
@@ -23,6 +24,7 @@ public class EnemyMovement : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }
+        
         
     }
 
@@ -43,4 +45,13 @@ public class EnemyMovement : MonoBehaviour
             }
         } 
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            speed *= -1;
+        }
+            
+    }
+
 }
