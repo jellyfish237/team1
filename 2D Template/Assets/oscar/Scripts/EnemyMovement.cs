@@ -28,6 +28,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Raycast distance
         RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position);
         if (ray.collider != null)
         {
