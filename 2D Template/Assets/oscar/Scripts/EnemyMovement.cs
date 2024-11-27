@@ -7,6 +7,9 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] public float speed;
     private GameObject player;
+    public float timer;
+    
+
 
     private bool hasLineOfSight = false;
     
@@ -24,7 +27,6 @@ public class EnemyMovement : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }
-        
         
     }
 
@@ -45,13 +47,19 @@ public class EnemyMovement : MonoBehaviour
             }
         } 
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             speed *= -1;
-        }
+            Invoke("TurnAround", timer);
             
+        }
+        
+        
     }
-
+    private void TurnAround()
+    {
+        speed *= -1;
+    }
 }
