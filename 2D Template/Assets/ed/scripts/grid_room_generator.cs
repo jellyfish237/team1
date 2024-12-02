@@ -90,13 +90,22 @@ public class grid_room_generator : MonoBehaviour
         }
         // ------------------
 
-        GameObject sDoor = FindChild(room.Indicestorooms[17].gameObject, gameObject => gameObject.name == "S_teleport");
-        GameObject nDoor = FindChild(room.Indicestorooms[24].gameObject, gameObject => gameObject.name == "N_teleport");
-        sDoor.GetComponent<teleport>().next_position = nDoor.GetComponent<teleport>();
-        nDoor.GetComponent<teleport>().next_position = sDoor.GetComponent<teleport>();
+        //GameObject sDoor = FindChild(room.Indicestorooms[17].gameObject, gameObject => gameObject.name == "S_teleport");
+        //GameObject nDoor = FindChild(room.Indicestorooms[24].gameObject, gameObject => gameObject.name == "N_teleport");
+        //sDoor.GetComponent<teleport>().next_position = nDoor.GetComponent<teleport>();
+        //nDoor.GetComponent<teleport>().next_position = sDoor.GetComponent<teleport>();
         for (int i = 0; i < Grid.Length; i++)
         {
-            Debug.Log(i);
+            GameObject nDoor = FindChild(room.Indicestorooms[i].gameObject, gameObject => gameObject.name == "N_teleport");
+            GameObject sDoor = FindChild(room.Indicestorooms[i + 7].gameObject, gameObject => gameObject.name == "S_teleport");
+            nDoor.GetComponent<teleport>().next_position = sDoor.GetComponent<teleport>();
+            sDoor.GetComponent<teleport>().next_position = nDoor.GetComponent<teleport>();
+
+            sDoor = FindChild(room.Indicestorooms[i].gameObject, gameObject => gameObject.name == "S_teleport");
+            nDoor = FindChild(room.Indicestorooms[i + 7].gameObject, gameObject => gameObject.name == "N_teleport");
+            sDoor.GetComponent<teleport>().next_position = nDoor.GetComponent<teleport>();
+            nDoor.GetComponent<teleport>().next_position = sDoor.GetComponent<teleport>();
+            //Debug.Log(i);
         }
     }
     // Update is called once per frame
