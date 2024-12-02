@@ -145,8 +145,9 @@ GameObject:
   - component: {fileID: 3531900603620140304}
   - component: {fileID: 6863980418790282484}
   - component: {fileID: 4661270922972461206}
+  - component: {fileID: 793527905246490871}
   m_Layer: 0
-  m_Name: Static Sprite (10)
+  m_Name: E_teleport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,6 +267,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &793527905246490871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403109353829082383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca5c81113253af41b2fd9eaf6fdd7bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  next_position: {fileID: 0}
 --- !u!1 &1648220049938716462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,8 +1264,9 @@ GameObject:
   - component: {fileID: 1873920774470873057}
   - component: {fileID: 7284868300220507803}
   - component: {fileID: 5780940743546002363}
+  - component: {fileID: 1408432719053745030}
   m_Layer: 0
-  m_Name: Static Sprite (3)
+  m_Name: N_teleport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1371,6 +1386,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1408432719053745030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5550087992868590095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca5c81113253af41b2fd9eaf6fdd7bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  next_position: {fileID: 0}
 --- !u!1 &5858440754060261401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,8 +1795,9 @@ GameObject:
   - component: {fileID: 4132202178004026325}
   - component: {fileID: 4287001344911104391}
   - component: {fileID: 438633112393114945}
+  - component: {fileID: 2505466076603812762}
   m_Layer: 0
-  m_Name: Static Sprite (12)
+  m_Name: W_teleport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1888,6 +1917,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2505466076603812762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7800060427397108774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca5c81113253af41b2fd9eaf6fdd7bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  next_position: {fileID: 0}
 --- !u!1 &8965647743034911116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1897,6 +1939,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8823363673577335651}
+  - component: {fileID: 6243132182997875445}
   m_Layer: 0
   m_Name: NWE_basic
   m_TagString: Untagged
@@ -1922,3 +1965,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6243132182997875445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8965647743034911116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88d662c2caf39a04bac5990af10cc8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  given_index: 0

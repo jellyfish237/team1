@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -20,15 +21,6 @@ public class player : MonoBehaviour
             moveInput.y = Input.GetAxisRaw("Vertical");
             moveInput.Normalize();
             rb2d.velocity = moveInput * speed;
-        }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.name == "N_teleport")
-        {
-            int next_room = ArrayUtility.IndexOf(grid.GetComponent<grid_room_generator>().Grid, collision.gameObject.transform.parent.gameObject.transform.parent.gameObject);
-            print(next_room);
-            Debug.Log(grid.GetComponent<grid_room_generator>().Grid[3]);
         }
     }
 }
