@@ -12,6 +12,7 @@ public class player : MonoBehaviour
     private Vector2 moveInput;
     public bool can_move = true;
     public bool can_take_damage = true;
+    public float i_frames = 0.5f;
 
     // Update is called once per frame
     void Update()
@@ -43,7 +44,7 @@ public class player : MonoBehaviour
     public IEnumerator damage_cooldown()
     {
         can_take_damage = false;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(i_frames);
         can_take_damage = true;
     }
 }
