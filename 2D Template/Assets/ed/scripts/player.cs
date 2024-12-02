@@ -10,8 +10,7 @@ public class player : MonoBehaviour
     public float speed;
     public Rigidbody2D rb2d;
     private Vector2 moveInput;
-    private bool can_move = true;
-    public bool can_teleport = true;
+    public bool can_move = true;
 
     // Update is called once per frame
     void Update()
@@ -31,8 +30,8 @@ public class player : MonoBehaviour
     }
     public IEnumerator teleport_cooldown()
     {
-        can_teleport = false;
-        yield return new WaitForSeconds(0.5f);
-        can_teleport = true;
+        can_move = false;
+        yield return new WaitForSeconds(0.1f);
+        can_move = true;
     }
 }

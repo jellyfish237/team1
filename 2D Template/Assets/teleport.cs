@@ -8,11 +8,26 @@ public class teleport : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && collision.gameObject.GetComponent<player>().can_teleport == true)
+        if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<player>().StartTeleportCooldown();
-            Debug.Log(collision.gameObject.GetComponent<player>().can_teleport);
-            collision.gameObject.transform.position = next_position.transform.position;
+            if (gameObject.name == "N_teleport")
+            {
+                collision.gameObject.transform.position = new Vector2(next_position.transform.position.x, next_position.transform.position.y + 1.5f);
+            }
+            if (gameObject.name == "W_teleport")
+            {
+                collision.gameObject.transform.position = new Vector2(next_position.transform.position.x, next_position.transform.position.y - 1.5f);
+            }
+            if (gameObject.name == "S_teleport")
+            {
+                collision.gameObject.transform.position = new Vector2(next_position.transform.position.x, next_position.transform.position.y - 1.5f);
+            }
+            if (gameObject.name == "E_teleport")
+            {
+                collision.gameObject.transform.position = new Vector2(next_position.transform.position.x, next_position.transform.position.y + 1.5f);
+
+            }
         }
     }
 

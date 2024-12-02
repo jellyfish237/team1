@@ -28,7 +28,6 @@ public class grid_room_generator : MonoBehaviour
             GameObject new_room = Instantiate(NWSE_BasicRoomPrefab, Grid[17].transform.position, Grid[17].transform.rotation);
             new_room.transform.SetParent(Grid[17].transform, true);
             new_room.GetComponent<room>().given_index = 17;
-
             room.Indicestorooms.Add(17,new_room.GetComponent<room>());
         }
         if (rng == 1)
@@ -36,7 +35,6 @@ public class grid_room_generator : MonoBehaviour
             GameObject new_room = Instantiate(WSE_BasicRoomPrefab, Grid[17].transform.position, Grid[17].transform.rotation);
             new_room.transform.SetParent(Grid[17].transform, true);
             new_room.GetComponent<room>().given_index = 17;
-
             room.Indicestorooms.Add(17, new_room.GetComponent<room>());
         }
         // ------------------
@@ -47,7 +45,6 @@ public class grid_room_generator : MonoBehaviour
             GameObject new_room = Instantiate(NWSE_BasicRoomPrefab, Grid[23].transform.position, Grid[23].transform.rotation);
             new_room.transform.SetParent(Grid[23].transform, true);
             new_room.GetComponent<room>().given_index = 23;
-
             room.Indicestorooms.Add(23, new_room.GetComponent<room>());
         }
         if (rng == 1)
@@ -55,7 +52,6 @@ public class grid_room_generator : MonoBehaviour
             GameObject new_room = Instantiate(NSE_BasicRoomPrefab, Grid[23].transform.position, Grid[23].transform.rotation);
             new_room.transform.SetParent(Grid[23].transform, true);
             new_room.GetComponent<room>().given_index = 23;
-
             room.Indicestorooms.Add(23, new_room.GetComponent<room>());
         }
         // ------------------
@@ -66,7 +62,6 @@ public class grid_room_generator : MonoBehaviour
             GameObject new_room = Instantiate(NWSE_BasicRoomPrefab, Grid[31].transform.position, Grid[31].transform.rotation);
             new_room.transform.SetParent(Grid[31].transform, true);
             new_room.GetComponent<room>().given_index = 31;
-
             room.Indicestorooms.Add(31, new_room.GetComponent<room>());
         }
         if (rng == 1)
@@ -74,7 +69,6 @@ public class grid_room_generator : MonoBehaviour
             GameObject new_room = Instantiate(NWE_BasicRoomPrefab, Grid[31].transform.position, Grid[31].transform.rotation);
             new_room.transform.SetParent(Grid[31].transform, true);
             new_room.GetComponent<room>().given_index = 31;
-
             room.Indicestorooms.Add(31, new_room.GetComponent<room>());
         }
         // ------------------
@@ -85,7 +79,6 @@ public class grid_room_generator : MonoBehaviour
             GameObject new_room = Instantiate(NWSE_BasicRoomPrefab, Grid[25].transform.position, Grid[25].transform.rotation);
             new_room.transform.SetParent(Grid[25].transform, true);
             new_room.GetComponent<room>().given_index = 25;
-
             room.Indicestorooms.Add(25, new_room.GetComponent<room>());
         }
         if (rng == 1)
@@ -93,16 +86,18 @@ public class grid_room_generator : MonoBehaviour
             GameObject new_room = Instantiate(NWS_BasicRoomPrefab, Grid[25].transform.position, Grid[25].transform.rotation);
             new_room.transform.SetParent(Grid[25].transform, true);
             new_room.GetComponent<room>().given_index = 25;
-
             room.Indicestorooms.Add(25, new_room.GetComponent<room>());
         }
         // ------------------
 
         GameObject sDoor = FindChild(room.Indicestorooms[17].gameObject, gameObject => gameObject.name == "S_teleport");
         GameObject nDoor = FindChild(room.Indicestorooms[24].gameObject, gameObject => gameObject.name == "N_teleport");
-
         sDoor.GetComponent<teleport>().next_position = nDoor.GetComponent<teleport>();
         nDoor.GetComponent<teleport>().next_position = sDoor.GetComponent<teleport>();
+        for (int i = 0; i < Grid.Length; i++)
+        {
+            Debug.Log(i);
+        }
     }
     // Update is called once per frame
     void Update()
