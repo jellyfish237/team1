@@ -98,11 +98,6 @@ public class grid_room_generator : MonoBehaviour
         {
             GameObject nDoor = FindChild(room.Indicestorooms[i].gameObject, gameObject => gameObject.name == "N_teleport");
             GameObject sDoor = FindChild(room.Indicestorooms[i + 7].gameObject, gameObject => gameObject.name == "S_teleport");
-            nDoor.GetComponent<teleport>().next_position = sDoor.GetComponent<teleport>();
-            sDoor.GetComponent<teleport>().next_position = nDoor.GetComponent<teleport>();
-
-            sDoor = FindChild(room.Indicestorooms[i].gameObject, gameObject => gameObject.name == "S_teleport");
-            nDoor = FindChild(room.Indicestorooms[i + 7].gameObject, gameObject => gameObject.name == "N_teleport");
             sDoor.GetComponent<teleport>().next_position = nDoor.GetComponent<teleport>();
             nDoor.GetComponent<teleport>().next_position = sDoor.GetComponent<teleport>();
             //Debug.Log(i);
