@@ -8,13 +8,11 @@ public class teleport : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && collision.gameObject.GetComponent<player>().can_teleport == true)
         {
-            //int index = collision.gameObject.transform.parent.gameObject.transform.parent.gameObject.GetComponent<room>().given_index;
-            //Debug.Log(grid.GetComponent<grid_room_generator>().Grid[index]);
-            //Debug.Log(grid.GetComponent<grid_room_generator>().Grid[index - 7]);
-
-            transform.position = next_position.transform.position;
+            collision.gameObject.GetComponent<player>().StartTeleportCooldown();
+            Debug.Log(collision.gameObject.GetComponent<player>().can_teleport);
+            collision.gameObject.transform.position = next_position.transform.position;
         }
     }
 

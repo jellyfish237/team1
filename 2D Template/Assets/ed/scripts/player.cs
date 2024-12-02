@@ -11,6 +11,7 @@ public class player : MonoBehaviour
     public Rigidbody2D rb2d;
     private Vector2 moveInput;
     private bool can_move = true;
+    public bool can_teleport = true;
 
     // Update is called once per frame
     void Update()
@@ -22,5 +23,16 @@ public class player : MonoBehaviour
             moveInput.Normalize();
             rb2d.velocity = moveInput * speed;
         }
+    }
+
+    public void StartTeleportCooldown()
+    {
+        StartCoroutine(teleport_cooldown());
+    }
+    public IEnumerator teleport_cooldown()
+    {
+        can_teleport = false;
+        yield return new WaitForSeconds(0.5f);
+        can_teleport = true;
     }
 }

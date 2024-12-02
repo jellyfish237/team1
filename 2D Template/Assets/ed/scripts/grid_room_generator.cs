@@ -18,6 +18,8 @@ public class grid_room_generator : MonoBehaviour
         GameObject new_room0 = Instantiate(NWSE_BasicRoomPrefab, Grid[24].transform.position, Grid[24].transform.rotation);
         new_room0.transform.SetParent(Grid[24].transform, true);
         new_room0.GetComponent<room>().given_index = 24;
+        room.Indicestorooms.Add(24, new_room0.GetComponent<room>());
+
         // ------------------
         rng = Random.Range(0, 2);
         Debug.Log(rng);
@@ -93,15 +95,14 @@ public class grid_room_generator : MonoBehaviour
             new_room.GetComponent<room>().given_index = 25;
 
             room.Indicestorooms.Add(25, new_room.GetComponent<room>());
-
-            /*GameObject nDoor = FindChild(new_room1, gameObject => gameObject.name == "N_teleport");
-            GameObject sDoor = FindChild(new_room2, gameObject => gameObject.name == "S_teleport");
-
-            nDoor.GetComponent<teleport>().next_position = sDoor.GetComponent<teleport>();
-            sDoor.GetComponent<teleport>().next_position = nDoor.GetComponent<teleport>();*/
         }
         // ------------------
 
+        GameObject sDoor = FindChild(room.Indicestorooms[17].gameObject, gameObject => gameObject.name == "S_teleport");
+        GameObject nDoor = FindChild(room.Indicestorooms[24].gameObject, gameObject => gameObject.name == "N_teleport");
+
+        sDoor.GetComponent<teleport>().next_position = nDoor.GetComponent<teleport>();
+        nDoor.GetComponent<teleport>().next_position = sDoor.GetComponent<teleport>();
     }
     // Update is called once per frame
     void Update()
@@ -114,7 +115,7 @@ public class grid_room_generator : MonoBehaviour
         foreach (Transform child in parent.GetComponentsInChildren<Transform>())
         {
             if (search_children.Invoke(child.gameObject))
-                return parent.gameObject;
+                return child.gameObject;
         }
 
         return null;
