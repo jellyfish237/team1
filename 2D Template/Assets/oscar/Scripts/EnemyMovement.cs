@@ -6,10 +6,11 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] public float speed;
+    private float currentSpeed;
     private GameObject player;
     public float timer;
-    
-
+    public float damage;
+    public bool canTakeDamage;
 
     private bool hasLineOfSight = false;
     
@@ -18,6 +19,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        currentSpeed = speed;
     }
 
     // Update is called once per frame
@@ -25,7 +27,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (hasLineOfSight)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentSpeed * Time.deltaTime);
         }
         
     }
@@ -49,17 +51,22 @@ public class EnemyMovement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if (other.gameObject.CompareTag("Player") && (other.gameObject.GetComponent<player>().can_take_damage == true))
+        {
+            other.gameObject.GetComponent<player>().StartDamageCooldown();
+            
+            other.gameObject.GetComponent<PlayerHealth>().health -= damage;
+        }
         if (other.gameObject.CompareTag("Player"))
         {
-            speed *= -1;
+            currentSpeed = -speed;
             Invoke("TurnAround", timer);
-            
         }
-        
-        
+
+
     }
     private void TurnAround()
     {
-        speed *= -1;
+        currentSpeed = speed;
     }
 }
