@@ -21,10 +21,12 @@ public class SummonItem : MonoBehaviour
     {
         if (Input.GetKeyDown(Itemout))
         {
+            GetComponent<newmove>().can_move = false;
             Summon();
         }
         else if (Input.GetKeyUp(Itemout))
         {
+            GetComponent<newmove>().can_move = true;
             Destroy();
         }
     }
