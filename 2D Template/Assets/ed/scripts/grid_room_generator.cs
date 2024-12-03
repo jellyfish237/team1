@@ -125,9 +125,9 @@ public class grid_room_generator : MonoBehaviour
             }
             /// WEST TO EAST
             /// 
-            if (room.Indicestorooms.ContainsKey(room1.Key - 1))
+            //if (room.Indicestorooms.ContainsKey(room1.Key - 1))
             {
-                if (room1.Key - 1 != 6 && room1.Key - 1 != 13 && room1.Key - 1 != 20 && room1.Key - 1 != 27 && room1.Key - 1 != 34 && room1.Key - 1 != 41)
+                if (room1.Key != 0 && room1.Key - 1 != 6 && room1.Key - 1 != 13 && room1.Key - 1 != 20 && room1.Key - 1 != 27 && room1.Key - 1 != 34 && room1.Key - 1 != 41)
                 {
                     GameObject wDoor = FindChild(room1.Value.gameObject, gameObject => gameObject.name == "W_teleport");
                     GameObject eDoor = FindChild(room.Indicestorooms[room1.Key - 1].gameObject, gameObject => gameObject.name == "E_teleport");

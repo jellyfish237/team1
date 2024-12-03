@@ -13,7 +13,7 @@ public class teleport : MonoBehaviour
             collision.gameObject.GetComponent<player>().StartTeleportCooldown();
             if (gameObject.name == "N_teleport")
             {
-                collision.gameObject.transform.position = new Vector2(next_position.transform.position.x, next_position.transform.position.y + 1.5f);
+                collision.gameObject.transform.position = new Vector2(next_position.transform.position.x, next_position.transform.position.y + 2f);
             }
             if (gameObject.name == "W_teleport")
             {
@@ -21,7 +21,7 @@ public class teleport : MonoBehaviour
             }
             if (gameObject.name == "S_teleport")
             {
-                collision.gameObject.transform.position = new Vector2(next_position.transform.position.x, next_position.transform.position.y - 0.5f);
+                collision.gameObject.transform.position = new Vector2(next_position.transform.position.x, next_position.transform.position.y - 1f);
             }
             if (gameObject.name == "E_teleport")
             {
