@@ -7,6 +7,7 @@ public class SummonItem : MonoBehaviour
     public GameObject item;
     public Transform itempos;
     public KeyCode Itemout;
+    public KeyCode rotateL, rotateR;
 
     private GameObject player;
     private GameObject itemInt;
@@ -28,6 +29,12 @@ public class SummonItem : MonoBehaviour
         {
             GetComponent<newmove>().can_move = true;
             Destroy();
+        }
+
+        if (itemInt)
+        {
+            itemInt.transform.position = itempos.position;
+            itemInt.transform.up = GetComponent<newmove>().currentDi;
         }
     }
     void Summon()
