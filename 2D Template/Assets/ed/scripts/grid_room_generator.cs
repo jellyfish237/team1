@@ -15,11 +15,19 @@ public class grid_room_generator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject new_room0 = Instantiate(NWSE_BasicRoomPrefab, Grid[24].transform.position, Grid[24].transform.rotation);
-        new_room0.transform.SetParent(Grid[24].transform, true);
-        new_room0.GetComponent<room>().given_index = 24;
-        room.Indicestorooms.Add(24, new_room0.GetComponent<room>());
+        for (int i = 0; i < Grid.Length; i++)
+        {
+            GameObject new_room0 = Instantiate(NWSE_BasicRoomPrefab, Grid[i].transform.position, Grid[i].transform.rotation);
+            new_room0.transform.SetParent(Grid[i].transform, true);
+            new_room0.GetComponent<room>().given_index = i;
+            room.Indicestorooms.Add(i, new_room0.GetComponent<room>());
+        }
 
+        //GameObject new_room0 = Instantiate(NWSE_BasicRoomPrefab, Grid[24].transform.position, Grid[24].transform.rotation);
+        //new_room0.transform.SetParent(Grid[24].transform, true);
+        //new_room0.GetComponent<room>().given_index = 24;
+        //room.Indicestorooms.Add(24, new_room0.GetComponent<room>());
+        /*
         // ------------------
         rng = Random.Range(0, 2);
         Debug.Log(rng);
@@ -94,14 +102,61 @@ public class grid_room_generator : MonoBehaviour
         //GameObject nDoor = FindChild(room.Indicestorooms[24].gameObject, gameObject => gameObject.name == "N_teleport");
         //sDoor.GetComponent<teleport>().next_position = nDoor.GetComponent<teleport>();
         //nDoor.GetComponent<teleport>().next_position = sDoor.GetComponent<teleport>();
-        for (int i = 0; i < Grid.Length; i++)
+        */
+        foreach (var room1 in room.Indicestorooms)
+        {
+            // room1.Key -> index
+            // room1.Value -> room
+
+            /// NORTH TO SOUTH
+            if (room.Indicestorooms.ContainsKey(room1.Key - 7))
+            {
+                GameObject nDoor = FindChild(room1.Value.gameObject, gameObject => gameObject.name == "N_teleport");
+                GameObject sDoor = FindChild(room.Indicestorooms[room1.Key - 7].gameObject, gameObject => gameObject.name == "S_teleport");
+                sDoor.GetComponent<teleport>().next_position = nDoor.GetComponent<teleport>();
+                nDoor.GetComponent<teleport>().next_position = sDoor.GetComponent<teleport>();
+            }
+            else
+            {
+                GameObject nDoor = FindChild(room1.Value.gameObject, gameObject => gameObject.name == "N_teleport");
+                GameObject sDoor = FindChild(room.Indicestorooms[room1.Key + 42].gameObject, gameObject => gameObject.name == "S_teleport");
+                sDoor.GetComponent<teleport>().next_position = nDoor.GetComponent<teleport>();
+                nDoor.GetComponent<teleport>().next_position = sDoor.GetComponent<teleport>();
+            }
+            /// WEST TO EAST
+            /// 
+            if (room.Indicestorooms.ContainsKey(room1.Key - 1))
+            {
+                if (room1.Key - 1 != 6 && room1.Key - 1 != 13 && room1.Key - 1 != 20 && room1.Key - 1 != 27 && room1.Key - 1 != 34 && room1.Key - 1 != 41)
+                {
+                    GameObject wDoor = FindChild(room1.Value.gameObject, gameObject => gameObject.name == "W_teleport");
+                    GameObject eDoor = FindChild(room.Indicestorooms[room1.Key - 1].gameObject, gameObject => gameObject.name == "E_teleport");
+                    eDoor.GetComponent<teleport>().next_position = wDoor.GetComponent<teleport>();
+                    wDoor.GetComponent<teleport>().next_position = eDoor.GetComponent<teleport>();
+                }
+                
+                else
+                {
+                    if (room.Indicestorooms.ContainsKey(room1.Key + 6))
+                    {
+                        Debug.Log(room1.Key);
+                        GameObject wDoor = FindChild(room1.Value.gameObject, gameObject => gameObject.name == "W_teleport");
+                        GameObject eDoor = FindChild(room.Indicestorooms[room1.Key + 6].gameObject, gameObject => gameObject.name == "E_teleport");
+                        eDoor.GetComponent<teleport>().next_position = wDoor.GetComponent<teleport>();
+                        wDoor.GetComponent<teleport>().next_position = eDoor.GetComponent<teleport>();
+                    }
+                }
+            }
+        }
+        
+        /* for (int i = 0; i < Grid.Length; i++)
         {
             GameObject nDoor = FindChild(room.Indicestorooms[i].gameObject, gameObject => gameObject.name == "N_teleport");
             GameObject sDoor = FindChild(room.Indicestorooms[i + 7].gameObject, gameObject => gameObject.name == "S_teleport");
             sDoor.GetComponent<teleport>().next_position = nDoor.GetComponent<teleport>();
             nDoor.GetComponent<teleport>().next_position = sDoor.GetComponent<teleport>();
-            //Debug.Log(i);
-        }
+            //Debug.Log(i); 
+        } */
     }
     // Update is called once per frame
     void Update()
