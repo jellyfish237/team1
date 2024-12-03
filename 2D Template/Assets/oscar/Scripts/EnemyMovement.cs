@@ -11,6 +11,7 @@ public class EnemyMovement : MonoBehaviour
     public float timer;
     public float damage;
     public bool canTakeDamage;
+    private Rigidbody2D RB;
 
     private bool hasLineOfSight = false;
     
@@ -20,6 +21,7 @@ public class EnemyMovement : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         currentSpeed = speed;
+        RB = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -27,9 +29,13 @@ public class EnemyMovement : MonoBehaviour
     {
         if (hasLineOfSight)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentSpeed * Time.deltaTime);
+            //transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentSpeed * Time.deltaTime);
+            RB.velocity = (player.transform.position - transform.position).normalized * currentSpeed;
         }
-        
+        else
+        {
+            RB.velocity = Vector2.zero;
+        }
     }
 
     private void FixedUpdate()
@@ -55,7 +61,7 @@ public class EnemyMovement : MonoBehaviour
         {
             other.gameObject.GetComponent<player>().StartDamageCooldown();
             
-            other.gameObject.GetComponent<PlayerHealth>().health -= damage;
+            other.gameObject.GetComponent<PlayerHealth>().health -= damage; 
         }
         if (other.gameObject.CompareTag("Player"))
         {
