@@ -10,6 +10,7 @@ public class newmove : MonoBehaviour
     public float speed;
     public Rigidbody2D rb2d;
     private Vector2 moveInput;
+    [HideInInspector] public Vector2 currentDi;
     public bool can_move = true;
     public bool can_take_damage = true;
 
@@ -22,6 +23,11 @@ public class newmove : MonoBehaviour
             moveInput.y = Input.GetAxisRaw("Vertical");
             moveInput.Normalize();
             rb2d.velocity = moveInput * speed;
+
+            if (moveInput != Vector2.zero)
+            {
+                currentDi = moveInput;
+            }
         }
     }
 
