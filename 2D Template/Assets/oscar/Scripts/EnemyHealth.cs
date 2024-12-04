@@ -7,6 +7,9 @@ public class EnemyHealth : MonoBehaviour
     public float health;
     public float maxHP;
     private bool ghostDead;
+    public float damageSpeed;
+
+    private bool isInLight;
     
     // Start is called before the first frame update
     void Start()
@@ -18,6 +21,10 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isInLight)
+        {
+            health -= Time.deltaTime * damageSpeed;
+        }
         if (health <= 0 && !ghostDead)
         {
             Debug.Log("Dead");
