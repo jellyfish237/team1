@@ -42,7 +42,7 @@ public class notouchbullet : MonoBehaviour
        if (other.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-            other.gameObject.GetComponent<playerHealth>().health -= damage;
+
         }
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1655461479858228093}
   - component: {fileID: 1655461479858228082}
   - component: {fileID: 1655461479858228094}
-  - component: {fileID: 2706322654820730238}
+  - component: {fileID: 523069406732456945}
   m_Layer: 0
   m_Name: Light Test
   m_TagString: MirrorLight
@@ -214,10 +214,10 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.008982968, y: -0.05516237}
-      - {x: -2.3393164, y: -20.62694}
-      - {x: 2.3406954, y: -20.56737}
+      - {x: -2.6456716, y: -23.127361}
+      - {x: 2.6164157, y: -23.115875}
   m_UseDelaunayMesh: 0
---- !u!114 &2706322654820730238
+--- !u!114 &523069406732456945
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,3 +229,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc14552f655d26a4ab6030bfba07eb2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Dmg: 2
+  thing: {fileID: 0}
