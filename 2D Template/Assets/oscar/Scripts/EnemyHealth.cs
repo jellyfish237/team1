@@ -9,7 +9,7 @@ public class EnemyHealth : MonoBehaviour
     private bool ghostDead;
     public float damageSpeed;
 
-    private bool isInLight;
+    [HideInInspector] public bool isInLight;
     
     // Start is called before the first frame update
     void Start()

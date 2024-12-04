@@ -17,11 +17,18 @@ public class MirrorDamage : MonoBehaviour
     {
         
     }
-    void OnTriggerStay2D (Collider2D other)
+    void OnTriggereEnter2D (Collider2D other)
     {
         if (other.gameObject.CompareTag("ghost"))
         {
-            other.gameObject.GetComponent<EnemyHealth>().health -= Dmg;
+            other.gameObject.GetComponent<EnemyHealth>().isInLight = true;
+        }
+    }
+    void OnTriggerExit2D (Collider2D other)
+    {
+        if (other.gameObject.CompareTag("ghost"))
+        {
+            other.gameObject.GetComponent<EnemyHealth>().isInLight = false;
         }
     }
 }
