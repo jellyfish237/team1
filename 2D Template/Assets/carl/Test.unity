@@ -550,6 +550,7 @@ MonoBehaviour:
   grid: {fileID: 0}
   speed: 10
   rb2d: {fileID: 1687382102}
+  currentDi: {x: 0, y: 0}
   can_move: 1
   can_take_damage: 1
 --- !u!1 &1750576138
