@@ -50,6 +50,9 @@ MonoBehaviour:
   grid: {fileID: 4026518823469519113, guid: eed80c9319e8ce046aece9bf56358732, type: 3}
   speed: 5
   rb2d: {fileID: 1650822889111616807}
+  can_move: 1
+  can_take_damage: 1
+  i_frames: 0.5
 --- !u!212 &5396919180261203273
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -92,7 +95,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.2787914, g: 0.28401533, b: 0.3301887, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
