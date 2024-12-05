@@ -13,6 +13,7 @@ public class player : MonoBehaviour
     public bool can_move = true;
     public bool can_take_damage = true;
     public float i_frames = 0.5f;
+    [HideInInspector] public Vector2 currentDi;
 
     // Update is called once per frame
     void Update()

@@ -8,7 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public float maxHP;
     private bool ghostDead;
     public float damageSpeed;
-
+    //make ghost take damage only when being chased
     [HideInInspector] public bool isInLight;
     
     // Start is called before the first frame update
@@ -27,7 +27,7 @@ public class EnemyHealth : MonoBehaviour
         }
         if (health <= 0 && !ghostDead)
         {
-            Debug.Log("Dead");
+            GameObject.Destroy(gameObject);
         }
     }
 }
