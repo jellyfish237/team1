@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class MirrorDamage : MonoBehaviour
 {
-    public float Dmg;
-    public GameObject thing;
+
     // Start is called before the first frame update
     void Start()
     {
