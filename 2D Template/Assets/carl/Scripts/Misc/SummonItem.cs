@@ -11,7 +11,8 @@ public class SummonItem : MonoBehaviour
     private GameObject itemInt;
     private bool isItemActive;
     private bool canUseItem = true;
-    public float activeTimer;
+    public float activeTimer = 5;
+    public float OriginalTime = 5;
     public float cooldownTime;
     // Start is called before the first frame update
     void Start()
@@ -28,12 +29,12 @@ public class SummonItem : MonoBehaviour
         {
             if (Input.GetKeyDown(Itemout))
             {
-                GetComponent<newmove>().can_move = false;
+                GetComponent<player>().can_move = false;
                 Summon();
             }
             else if (Input.GetKeyUp(Itemout))
             {
-                GetComponent<newmove>().can_move = true;
+                GetComponent<player>().can_move = true;
                 Destroy();
                 ItemCooldownStart();
             }
@@ -42,7 +43,7 @@ public class SummonItem : MonoBehaviour
         if (itemInt)
         {
             itemInt.transform.position = itempos.position;
-            itemInt.transform.up = GetComponent<newmove>().currentDi;
+            itemInt.transform.up = GetComponent<player>().currentDi;
         }
 
         if (isItemActive == true)
@@ -52,6 +53,8 @@ public class SummonItem : MonoBehaviour
             if (activeTimer <= 0.0f)
             {
                 timerEnded();
+                canUseItem = true;
+                activeTimer = OriginalTime;
             }
         }
 
@@ -66,7 +69,6 @@ public class SummonItem : MonoBehaviour
     {
         Destroy(itemInt);
         isItemActive = false;
-        canUseItem = true;
     }
     public void ItemCooldownStart()
     {
