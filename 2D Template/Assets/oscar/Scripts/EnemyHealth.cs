@@ -4,21 +4,13 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public float health;
-    public float maxHP;
-    private bool ghostDead;
-    public float damageSpeed;
+    public float health = 100;
+    public float maxHP = 100;
+    private bool ghostDead = false;
+    public float damageSpeed = 1000;
     //make ghost take damage only when being chased
     [HideInInspector] public bool isInLight;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        maxHP = health;
-        ghostDead = false;
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (isInLight)

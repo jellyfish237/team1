@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3476825433024833802}
   - component: {fileID: 3476825433024833847}
   - component: {fileID: 3476825433024833846}
+  - component: {fileID: 1524030426469262137}
   m_Layer: 2
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,3 +151,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &1524030426469262137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476825433024833807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a36ca298100a642a8a7f2f73ed2823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHP: 100
+  damageSpeed: 0
+  isInLight: 0

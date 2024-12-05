@@ -25,6 +25,14 @@ public class player : MonoBehaviour
             moveInput.Normalize();
             rb2d.velocity = moveInput * speed;
         }
+        if (moveInput != Vector2.zero)
+        {
+            currentDi = moveInput;
+        }
+        if (can_move == false)
+        {
+            rb2d.velocity = Vector2.zero;
+        }
     }
 
     public void StartTeleportCooldown()
