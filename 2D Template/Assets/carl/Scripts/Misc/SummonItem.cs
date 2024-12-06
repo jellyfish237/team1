@@ -62,7 +62,7 @@ public class SummonItem : MonoBehaviour
     void Summon()
     {
            itemInt = Instantiate(item, itempos.position, Quaternion.identity);
-        isItemActive = true;
+           isItemActive = true;
         
     }
     void Destroy()
