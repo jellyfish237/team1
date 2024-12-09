@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class SummonItem : MonoBehaviour
 {
-    public GameObject item;
+    public ItemClass mirror;
     public Transform itempos;
     public KeyCode Itemout;
     private GameObject player;
-    private GameObject itemInt;
+    public ItemClass current_item;
     private bool isItemActive;
     private bool canUseItem = true;
-    public float activeTimer = 5;
-    public float OriginalTime = 5;
-    public float cooldownTime;
+    public float activeTimer = 5.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,48 +25,41 @@ public class SummonItem : MonoBehaviour
     {
         if (canUseItem == true)
         {
-            if (Input.GetKeyDown(Itemout))
+            if (Input.GetKeyDown(Itemout) && isItemActive == false)
             {
-                GetComponent<player>().can_move = false;
-                Summon();
+                isItemActive = true;
+                Summon(mirror);
             }
             else if (Input.GetKeyUp(Itemout))
             {
-                GetComponent<player>().can_move = true;
-                Destroy();
-                ItemCooldownStart();
+                Debug.Log("released_key");
+                Delete();
             }
         }
 
-        if (itemInt)
+        if (current_item)
         {
-            itemInt.transform.position = itempos.position;
-            itemInt.transform.up = GetComponent<player>().currentDi;
+            current_item.transform.position = itempos.position;
+            current_item.transform.up = GetComponent<player>().currentDi;
         }
-
-        if (isItemActive == true)
-        {
-            activeTimer -= Time.deltaTime;
-
-            if (activeTimer <= 0.0f)
-            {
-                timerEnded();
-                canUseItem = true;
-                activeTimer = OriginalTime;
-            }
-        }
-
     }
-    void Summon()
+    void Summon(ItemClass item)
     {
-           itemInt = Instantiate(item, itempos.position, Quaternion.identity);
-           isItemActive = true;
-        
+        Debug.Log("player wanted to use a " + item);
+        ItemClass new_item = Instantiate(mirror, itempos.position, Quaternion.identity);
+        new_item.itempos = itempos;
+        new_item.player = player;
+        new_item.item_summon = this;
+        current_item = new_item;
+        isItemActive = true;
     }
-    void Destroy()
+    public void Delete()
     {
-        Destroy(itemInt);
+        Destroy(current_item.GetComponent<ItemClass>().created_item);
+        Destroy(current_item);
         isItemActive = false;
+        enable_player_move();
+        ItemCooldownStart();
     }
     public void ItemCooldownStart()
     {
@@ -77,12 +68,15 @@ public class SummonItem : MonoBehaviour
     public IEnumerator ItemCooldown()
     {
         canUseItem = false;
-        yield return new WaitForSeconds(cooldownTime);
+        yield return new WaitForSeconds(0.25f);
         canUseItem = true;
     }
-
-    void timerEnded()
+    public void enable_player_move()
     {
-        Destroy();
+        GetComponent<player>().can_move = true;
+    }
+    public void disable_player_move()
+    {
+        GetComponent<player>().can_move = false;
     }
 }
