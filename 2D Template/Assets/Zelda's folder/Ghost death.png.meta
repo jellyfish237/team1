@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b71889b2be3756a4384a5e574271c557
+guid: 4619cc1df97e7aa4c8c3aa946f0d6b38
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -131,12 +131,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Base_Ghost_Attack_0
+      name: Ghost death_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 33
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -145,19 +145,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87212a7c34d7dcf46998232042d02e41
-      internalID: -1167507887
+      spriteID: 13730c8b4a28bb44d8e3c4282848767d
+      internalID: -1282324886
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Base_Ghost_Attack_1
+      name: Ghost death_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 33
         y: 0
-        width: 32
+        width: 33
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -166,19 +166,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6743d505ea96cfa41910e9f0680b193e
-      internalID: 93029003
+      spriteID: 66417adaad882e7488e2cfb9337e5156
+      internalID: 622235855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Base_Ghost_Attack_2
+      name: Ghost death_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 66
         y: 0
-        width: 32
+        width: 33
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -187,19 +187,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bec821c03f79f744d98d94b204502660
-      internalID: 999874173
+      spriteID: 013e450875ad0d84d961c1b5b6a44ad4
+      internalID: 793308517
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Base_Ghost_Attack_3
+      name: Ghost death_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 99
         y: 0
-        width: 32
+        width: 33
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -208,19 +208,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b70e50b8c9060884198a2316f81838a2
-      internalID: 495218257
+      spriteID: 7299d578485ea1f40b4b43410d768a4b
+      internalID: -695747913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Base_Ghost_Attack_4
+      name: Ghost death_4
       rect:
         serializedVersion: 2
-        x: 128
+        x: 132
         y: 0
-        width: 32
+        width: 33
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -229,19 +229,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b29eccf0d2286fe44a9e30b42745d396
-      internalID: -72768684
+      spriteID: 74b52a916fa0d5443a15b242f41dc98d
+      internalID: -516984467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Base_Ghost_Attack_5
+      name: Ghost death_5
       rect:
         serializedVersion: 2
-        x: 160
+        x: 165
         y: 0
-        width: 32
+        width: 33
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -250,19 +250,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbd101b5a07fd6f4d9315a8379411bf9
-      internalID: 857890080
+      spriteID: 1e77867973ad09047b55cae9bd4d3c9b
+      internalID: 1572106554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Base_Ghost_Attack_6
+      name: Ghost death_6
       rect:
         serializedVersion: 2
-        x: 192
+        x: 198
         y: 0
-        width: 32
+        width: 33
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -271,19 +271,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15e5d1c06af95504a9904e765e9983e7
-      internalID: -1528299324
+      spriteID: 46149ecb1c4beb54f9916640cbef852c
+      internalID: -2014208822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Base_Ghost_Attack_7
+      name: Ghost death_7
       rect:
         serializedVersion: 2
-        x: 224
+        x: 231
         y: 0
-        width: 32
+        width: 33
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -292,197 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43d9171586f863c40863944144305bf4
-      internalID: 1567040104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Base_Ghost_Attack_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52f42ac4dc75fd340adff1d00bef9cfb
-      internalID: -377871908
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Base_Ghost_Attack_9
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 83005120339fa024989acf596ab4d701
-      internalID: -1058285304
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Base_Ghost_Attack_10
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b3960dcc523a2c46b9dd4b88f51ab0b
-      internalID: 1962100004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Base_Ghost_Attack_11
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a0f0a98f0afd46840b064a055587720a
-      internalID: 1787252951
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Base_Ghost_Attack_12
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a0d000b68329b344aaa42d6afa1143b
-      internalID: 1236475381
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Base_Ghost_Attack_13
-      rect:
-        serializedVersion: 2
-        x: 416
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 68e6e7d1b2b89774f981a0eb4b5a1e13
-      internalID: -1033488878
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Base_Ghost_Attack_14
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39e2cc9606748364783ce4895a6dfb91
-      internalID: -1837836519
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Base_Ghost_Attack_15
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f07e13946cb04834bafd8a992e9b5cd0
-      internalID: -958873856
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Base_Ghost_Attack_16
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d501d1859293b2d469c6206663d3b624
-      internalID: -1135373128
+      spriteID: f8f614453ce7be046bd0531474faf63f
+      internalID: -2116573575
       vertices: []
       indices: 
       edges: []
@@ -498,23 +309,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Base_Ghost_Attack_0: -1167507887
-      Base_Ghost_Attack_16: -1135373128
-      Base_Ghost_Attack_7: 1567040104
-      Base_Ghost_Attack_9: -1058285304
-      Base_Ghost_Attack_4: -72768684
-      Base_Ghost_Attack_6: -1528299324
-      Base_Ghost_Attack_5: 857890080
-      Base_Ghost_Attack_13: -1033488878
-      Base_Ghost_Attack_8: -377871908
-      Base_Ghost_Attack_11: 1787252951
-      Base_Ghost_Attack_3: 495218257
-      Base_Ghost_Attack_10: 1962100004
-      Base_Ghost_Attack_15: -958873856
-      Base_Ghost_Attack_2: 999874173
-      Base_Ghost_Attack_1: 93029003
-      Base_Ghost_Attack_12: 1236475381
-      Base_Ghost_Attack_14: -1837836519
+      Ghost death_4: -516984467
+      Ghost death_3: -695747913
+      Ghost death_6: -2014208822
+      Ghost death_2: 793308517
+      Ghost death_7: -2116573575
+      Ghost death_1: 622235855
+      Ghost death_5: 1572106554
+      Ghost death_0: -1282324886
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
