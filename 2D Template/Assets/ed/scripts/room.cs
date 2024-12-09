@@ -10,7 +10,7 @@ public class room:MonoBehaviour
     public int given_index;
     public GameObject ghost;
     public GameObject health_item;
-    public int rng;
+    private int rng;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class room:MonoBehaviour
         {
             GameObject new_ghost = Instantiate(ghost, new Vector3 (transform.position.x, transform.position.y, transform.position.z - 5), transform.rotation);
         }
-        if (rng == 1)
+        else
         {
             GameObject new_ghost = Instantiate(health_item, new Vector3(transform.position.x, transform.position.y, transform.position.z - 5), transform.rotation);
         }
