@@ -1,22 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class flicker : MonoBehaviour
 {
-    public Light leLight;
     public float maxInterval = 2;
     public float maxBurst = 1f;
     public float maxFlicker = 0.2f;
 
-    float defaultInten;
+    float defaultInten = 1;
     bool Flicker;
     float timer;
     float interval;
+    public Light2D leLight;
     // Start is called before the first frame update
     void Start()
     {
-        defaultInten = leLight.intensity;
+        //defaultInten = GetComponent<Light2D>().intensity;
         interval = Random.Range(0,maxInterval);
     }
 

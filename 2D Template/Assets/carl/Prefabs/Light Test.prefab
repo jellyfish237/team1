@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 651bac35720d3814c866346bc7659258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leLight: {fileID: 0}
-  maxInterval: 2
+  maxInterval: 0.5
   maxBurst: 1
   maxFlicker: 0.2
+  leLight: {fileID: 1655461479858228082}
