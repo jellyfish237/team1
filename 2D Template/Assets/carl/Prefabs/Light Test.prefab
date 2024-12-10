@@ -125,7 +125,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.582
-  m_Color: {r: 0.41787937, g: 0.7372549, b: 0.26666668, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 0.61
   m_LightVolumeIntensityEnabled: 1
@@ -215,7 +215,7 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 0.008982968, y: -0.05516237}
       - {x: -2.6456716, y: -23.127361}
-      - {x: 2.6164157, y: -23.115875}
+      - {x: 2.6480746, y: -23.132439}
   m_UseDelaunayMesh: 0
 --- !u!114 &523069406732456945
 MonoBehaviour:
@@ -229,5 +229,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc14552f655d26a4ab6030bfba07eb2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dmg: 2
-  thing: {fileID: 0}

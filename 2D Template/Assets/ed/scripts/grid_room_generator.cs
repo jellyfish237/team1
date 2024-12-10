@@ -105,9 +105,6 @@ public class grid_room_generator : MonoBehaviour
         */
         foreach (var room1 in room.Indicestorooms)
         {
-            // room1.Key -> index
-            // room1.Value -> room
-
             /// NORTH TO SOUTH
             if (room.Indicestorooms.ContainsKey(room1.Key - 7))
             {
@@ -125,7 +122,6 @@ public class grid_room_generator : MonoBehaviour
             }
             /// WEST TO EAST
             /// 
-            //if (room.Indicestorooms.ContainsKey(room1.Key - 1))
             {
                 if (room1.Key != 0 && room1.Key - 1 != 6 && room1.Key - 1 != 13 && room1.Key - 1 != 20 && room1.Key - 1 != 27 && room1.Key - 1 != 34 && room1.Key - 1 != 41)
                 {
@@ -148,15 +144,6 @@ public class grid_room_generator : MonoBehaviour
                 }
             }
         }
-        
-        /* for (int i = 0; i < Grid.Length; i++)
-        {
-            GameObject nDoor = FindChild(room.Indicestorooms[i].gameObject, gameObject => gameObject.name == "N_teleport");
-            GameObject sDoor = FindChild(room.Indicestorooms[i + 7].gameObject, gameObject => gameObject.name == "S_teleport");
-            sDoor.GetComponent<teleport>().next_position = nDoor.GetComponent<teleport>();
-            nDoor.GetComponent<teleport>().next_position = sDoor.GetComponent<teleport>();
-            //Debug.Log(i); 
-        } */
     }
     // Update is called once per frame
     void Update()
