@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3476825433024833803}
   - component: {fileID: 3476825433024833804}
-  - component: {fileID: 3476825433024833802}
   - component: {fileID: 3476825433024833847}
   - component: {fileID: 3476825433024833846}
   - component: {fileID: 1524030426469262137}
+  - component: {fileID: 5933708237753589267}
   m_Layer: 2
   m_Name: Enemy
   m_TagString: ghost
@@ -88,22 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3476825433024833802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3476825433024833807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e602d8cbf1117c44845112a39f88ad3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  timer: 1.5
-  damage: 10
-  canTakeDamage: 0
 --- !u!61 &3476825433024833847
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -167,3 +151,22 @@ MonoBehaviour:
   maxHP: 100
   damageSpeed: 50
   isInLight: 0
+  pushBack: 1
+  takingDamage: 0
+--- !u!114 &5933708237753589267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476825433024833807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e602d8cbf1117c44845112a39f88ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  timer: 1.5
+  damage: 10
+  canTakeDamage: 0
+  hasLineOfSight: 0
