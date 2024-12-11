@@ -13,7 +13,7 @@ public class EnemyMovement : MonoBehaviour
     public bool canTakeDamage;
     private Rigidbody2D RB;
 
-    private bool hasLineOfSight = false;
+    [HideInInspector] public bool hasLineOfSight = false;
     
 
     // Start is called before the first frame update
@@ -27,9 +27,13 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hasLineOfSight)
+        if (GetComponent<EnemyHealth>().takingDamage == true)
         {
-            //transform.position = Vector2.MoveTowards(transform.position, player.transform.position, currentSpeed * Time.deltaTime);
+            RB.velocity = (player.transform.position - transform.position).normalized * -GetComponent<EnemyHealth>().pushBack;
+            
+        }
+        else if (hasLineOfSight)
+        {
             RB.velocity = (player.transform.position - transform.position).normalized * currentSpeed;
         }
         else

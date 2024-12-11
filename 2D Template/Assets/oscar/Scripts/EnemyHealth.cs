@@ -1,25 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
     public float health = 100;
     public float maxHP = 100;
-    private bool ghostDead = false;
     public float damageSpeed = 50;
     //make ghost take damage only when being chased
     [HideInInspector] public bool isInLight;
-    
+    public float pushBack;
+    public bool takingDamage;
+    void Start()
+    {
+        
+    }
     void Update()
     {
-        if (isInLight)
+        if (isInLight && (GetComponent<EnemyMovement>().hasLineOfSight == true))
         {
+            takingDamage = true;
             health -= Time.deltaTime * damageSpeed;
         }
-        if (health <= 0 && !ghostDead)
+        else
+        {
+            takingDamage = false;
+        }
+        if (health <= 0)
         {
             GameObject.Destroy(gameObject);
+
         }
     }
+   
 }
