@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class UI : MonoBehaviour
 {
+    public SummonItem summonitem;
     public PlayerHealth player_HP;
-    public UnityEngine.UI.Slider health_bar0;
+    public UnityEngine.UI.Slider health_bar;
+    public UnityEngine.UI.Slider mirror_bar;
     public GameObject fill;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,7 @@ public class UI : MonoBehaviour
         {
             fill.SetActive(false);
         }
-        health_bar0.value = player_HP.GetComponent<PlayerHealth>().health / 100;
+        health_bar.value = player_HP.GetComponent<PlayerHealth>().health / 100;
+        mirror_bar.value = summonitem.GetComponent<SummonItem>().mirrorTime / 5;
     }
 }
