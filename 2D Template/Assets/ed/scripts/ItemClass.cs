@@ -27,6 +27,7 @@ public class ItemClass : MonoBehaviour
     {
         print("yes");
         yield return new WaitForSeconds(5.0f);
+        Delete();
     }
     public void Delete()
     {

@@ -6,6 +6,8 @@ public class MirrorDamage : MonoBehaviour
 {
     public float recieved_time = 5.0f;
     public ItemClass item_class;
+
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("ghost"))

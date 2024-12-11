@@ -12,9 +12,11 @@ public class SummonItem : MonoBehaviour
     private bool isItemActive;
     private bool canUseItem = true;
     public float activeTimer = 5.0f;
+    public float mirrorTime = 5.0f;
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("i exist");
         player = GameObject.FindGameObjectWithTag("Player");
         isItemActive = false;
         canUseItem = true;
@@ -42,6 +44,17 @@ public class SummonItem : MonoBehaviour
             current_item.transform.position = itempos.position;
             current_item.transform.up = GetComponent<player>().currentDi;
         }
+
+        if (isItemActive == true && mirrorTime >= 0.0f)
+        {
+            mirrorTime -= Time.deltaTime;
+            mirrorTime = Mathf.Clamp(mirrorTime, 0.0f, 5.0f);
+        }
+        if (!isItemActive)
+        {
+            mirrorTime = 5.0f;
+        }
+        Debug.Log(mirrorTime);
     }
     void Summon(ItemClass item)
     {
