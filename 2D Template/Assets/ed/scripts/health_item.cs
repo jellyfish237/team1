@@ -21,9 +21,13 @@ public class health_item : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<PlayerHealth>().health += healing;
-            collision.gameObject.GetComponent<PlayerHealth>().health = Mathf.Clamp(collision.gameObject.GetComponent<PlayerHealth>().health, -1, collision.gameObject.GetComponent<PlayerHealth>().maxHP);
-            Destroy(gameObject);
+            if (collision.gameObject.GetComponent<PlayerHealth>().health != 100)
+            {
+                Debug.Log("no");
+                collision.gameObject.GetComponent<PlayerHealth>().health += healing;
+                collision.gameObject.GetComponent<PlayerHealth>().health = Mathf.Clamp(collision.gameObject.GetComponent<PlayerHealth>().health, -1, collision.gameObject.GetComponent<PlayerHealth>().maxHP);
+                Destroy(gameObject);
+            }
         }
     }
 }
