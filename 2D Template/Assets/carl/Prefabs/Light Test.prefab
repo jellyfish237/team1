@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1655461479858228094}
   - component: {fileID: 523069406732456945}
   - component: {fileID: -7140220637387226598}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Light Test
   m_TagString: MirrorLight
   m_Icon: {fileID: 0}
