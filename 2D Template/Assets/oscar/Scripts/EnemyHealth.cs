@@ -7,7 +7,6 @@ public class EnemyHealth : MonoBehaviour
 {
     public float health = 100;
     public float maxHP = 100;
-    //make ghost take damage only when being chased
     [HideInInspector] public bool isInLight;
     public float pushBack;
     public bool takingDamage;
