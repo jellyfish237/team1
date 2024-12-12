@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 4026518823469519113, guid: eed80c9319e8ce046aece9bf56358732, type: 3}
-  speed: 4
+  speed: 3.5
   rb2d: {fileID: 1650822889111616807}
   can_move: 1
   can_take_damage: 1
@@ -258,8 +258,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1
-  m_PointLightOuterRadius: 999
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 3.5
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
