@@ -36,14 +36,17 @@ public class EnemyMovement : MonoBehaviour
         if (GetComponent<EnemyHealth>().takingDamage == true)
         {
             RB.velocity = (player.transform.position - transform.position).normalized * -GetComponent<EnemyHealth>().pushBack;
+            Debug.Log("0");
         }
-        else if (reposition == true)
+        else if (reposition == true && GetComponent<EnemyHealth>().takingDamage == false)
         {
             RB.velocity = (new_position - transform.position).normalized * currentSpeed;
+            Debug.Log("1");
         }
-        else if (hasLineOfSight && reposition == false)
+        else if (hasLineOfSight && reposition == false && GetComponent<EnemyHealth>().takingDamage == false)
         {
             RB.velocity = (player.transform.position - transform.position).normalized * currentSpeed;
+            Debug.Log("2");
         }
         else
         {
