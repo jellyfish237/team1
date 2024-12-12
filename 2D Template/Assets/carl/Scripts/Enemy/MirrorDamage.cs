@@ -6,7 +6,6 @@ public class MirrorDamage : MonoBehaviour
 {
     public float recieved_time = 5.0f;
     public float damageSpeed = 50;
-    public ItemClass item_class;
 
 
     void OnTriggerEnter2D(Collider2D other)
