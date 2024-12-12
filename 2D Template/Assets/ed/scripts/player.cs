@@ -12,7 +12,7 @@ public class player : MonoBehaviour
     private Vector2 moveInput;
     public bool can_move = true;
     public bool can_take_damage = true;
-    public float i_frames = 0.5f;
+    public float i_frames = 0f;
     [HideInInspector] public Vector2 currentDi;
 
     // Update is called once per frame

@@ -58,7 +58,7 @@ MonoBehaviour:
   rb2d: {fileID: 1650822889111616807}
   can_move: 1
   can_take_damage: 1
-  i_frames: 0.5
+  i_frames: 0
   currentDi: {x: 0, y: 0}
 --- !u!114 &1797798299283198561
 MonoBehaviour:

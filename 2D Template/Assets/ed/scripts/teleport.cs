@@ -8,7 +8,7 @@ public class teleport : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && (collision.gameObject.GetComponent<player>().can_take_damage == true))
+        if (collision.gameObject.CompareTag("Player") && (collision.gameObject.GetComponent<player>().can_move == true))
         {
             collision.gameObject.GetComponent<player>().StartTeleportCooldown();
             if (gameObject.name == "N_teleport")
