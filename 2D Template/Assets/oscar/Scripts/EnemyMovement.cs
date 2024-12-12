@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
+using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -12,6 +14,10 @@ public class EnemyMovement : MonoBehaviour
     public float damage;
     public bool canTakeDamage;
     private Rigidbody2D RB;
+
+    private bool reposition;
+    private Vector3 new_position;
+    private int rng;
 
     [HideInInspector] public bool hasLineOfSight = false;
     
@@ -31,7 +37,11 @@ public class EnemyMovement : MonoBehaviour
         {
             RB.velocity = (player.transform.position - transform.position).normalized * -GetComponent<EnemyHealth>().pushBack;
         }
-        else if (hasLineOfSight)
+        else if (reposition == true)
+        {
+            RB.velocity = (new_position - transform.position).normalized * currentSpeed;
+        }
+        else if (hasLineOfSight && reposition == false)
         {
             RB.velocity = (player.transform.position - transform.position).normalized * currentSpeed;
         }
@@ -77,5 +87,29 @@ public class EnemyMovement : MonoBehaviour
     private void TurnAround()
     {
         currentSpeed = speed;
+        reposition = true;
+        rng = Random.Range(0, 2);
+        if (rng == 0)
+        {
+            new_position.x = transform.position.x + Random.Range(-4, -5);
+        }  
+        if (rng == 1)
+        {
+            new_position.x = transform.position.x + Random.Range(4, 5);
+        }
+        rng = Random.Range(0, 2);
+        if (rng == 0)
+        {
+            new_position.y = transform.position.x + Random.Range(-4, -5);
+        }
+        if (rng == 1)
+        {
+            new_position.y = transform.position.x + Random.Range(4, 5);
+        }
+        Invoke("Restart", timer);
+    }
+    private void Restart()
+    {
+        reposition = false;
     }
 }
