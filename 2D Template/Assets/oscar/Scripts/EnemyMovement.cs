@@ -30,7 +30,6 @@ public class EnemyMovement : MonoBehaviour
         if (GetComponent<EnemyHealth>().takingDamage == true)
         {
             RB.velocity = (player.transform.position - transform.position).normalized * -GetComponent<EnemyHealth>().pushBack;
-            
         }
         else if (hasLineOfSight)
         {

@@ -404,10 +404,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
-    - target: {fileID: 3766918274366639870, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
-      propertyPath: speed
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 5396919180261203273, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -462,6 +458,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7020219246899535781, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563724245548697955, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563724245548697955, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8900400058873760858, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
@@ -749,14 +753,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1524030426469262137, guid: 72b654ed7405187429ea29579e59272a, type: 3}
-      propertyPath: pushBack
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1524030426469262137, guid: 72b654ed7405187429ea29579e59272a, type: 3}
-      propertyPath: damageSpeed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3476825433024833803, guid: 72b654ed7405187429ea29579e59272a, type: 3}
       propertyPath: m_RootOrder
       value: 1

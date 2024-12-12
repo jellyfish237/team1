@@ -192,6 +192,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7020219246899535781, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
   m_PrefabInstance: {fileID: 1800608185}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1482493973 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1797798299283198561, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
+  m_PrefabInstance: {fileID: 1800608185}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c316689aeb6b14296fba212c501381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1496009410 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4918976249419966475, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
+  m_PrefabInstance: {fileID: 1800608185}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a295ade084075ad4cb13da99b9ed5148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1787239359
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,13 +259,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 1797798299283198561, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
+      propertyPath: ui
+      value: 
+      objectReference: {fileID: 1496009410}
     - target: {fileID: 2852394093606644233, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3766918274366639870, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
-      propertyPath: speed
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4208864955304640889, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -257,6 +279,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4918976249419966475, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
+      propertyPath: summonitem
+      value: 
+      objectReference: {fileID: 1482493973}
     - target: {fileID: 7020219246899535781, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
       propertyPath: m_RootOrder
       value: 0
