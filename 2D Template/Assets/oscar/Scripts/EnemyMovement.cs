@@ -22,6 +22,8 @@ public class EnemyMovement : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         currentSpeed = speed;
         RB = GetComponent<Rigidbody2D>();
+        Debug.Log(speed);
+        Debug.Log(currentSpeed);
     }
 
     // Update is called once per frame
@@ -30,11 +32,11 @@ public class EnemyMovement : MonoBehaviour
         if (GetComponent<EnemyHealth>().takingDamage == true)
         {
             RB.velocity = (player.transform.position - transform.position).normalized * -GetComponent<EnemyHealth>().pushBack;
-            
         }
         else if (hasLineOfSight)
         {
             RB.velocity = (player.transform.position - transform.position).normalized * currentSpeed;
+            Debug.Log(RB.velocity);
         }
         else
         {

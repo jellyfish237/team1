@@ -16,7 +16,6 @@ public class SummonItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("i exist");
         player = GameObject.FindGameObjectWithTag("Player");
         isItemActive = false;
         canUseItem = true;
@@ -34,7 +33,6 @@ public class SummonItem : MonoBehaviour
             }
             else if (Input.GetKeyUp(Itemout))
             {
-                Debug.Log("released_key");
                 Delete();
             }
         }
@@ -54,7 +52,7 @@ public class SummonItem : MonoBehaviour
         {
             mirrorTime = 5.0f;
         }
-        Debug.Log(mirrorTime);
+        //Debug.Log(mirrorTime);
     }
     void Summon(ItemClass item)
     {

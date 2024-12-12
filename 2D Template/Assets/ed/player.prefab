@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 4026518823469519113, guid: eed80c9319e8ce046aece9bf56358732, type: 3}
-  speed: 3
+  speed: 7
   rb2d: {fileID: 1650822889111616807}
   can_move: 1
   can_take_damage: 1
