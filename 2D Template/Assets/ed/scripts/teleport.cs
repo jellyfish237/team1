@@ -17,7 +17,7 @@ public class teleport : MonoBehaviour
             }
             if (gameObject.name == "W_teleport")
             {
-                collision.gameObject.transform.position = new Vector2(next_position.transform.position.x - 1.5f, next_position.transform.position.y + 0.5f);
+                collision.gameObject.transform.position = new Vector2(next_position.transform.position.x - 1.5f, next_position.transform.position.y);
             }
             if (gameObject.name == "S_teleport")
             {
@@ -25,7 +25,7 @@ public class teleport : MonoBehaviour
             }
             if (gameObject.name == "E_teleport")
             {
-                collision.gameObject.transform.position = new Vector2(next_position.transform.position.x + 1.5f, next_position.transform.position.y + 0.5f);
+                collision.gameObject.transform.position = new Vector2(next_position.transform.position.x + 1.5f, next_position.transform.position.y);
 
             }
         }

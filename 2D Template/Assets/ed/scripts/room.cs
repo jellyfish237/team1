@@ -19,11 +19,11 @@ public class room:MonoBehaviour
         Debug.Log(rng);
         if (rng == 0)
         {
-            GameObject new_ghost = Instantiate(ghost, new Vector3 (transform.position.x, transform.position.y, transform.position.z - 5), transform.rotation);
+            GameObject new_ghost = Instantiate(ghost, new Vector3 (transform.position.x, transform.position.y, transform.position.z), transform.rotation);
         }
         else
         {
-            GameObject new_ghost = Instantiate(health_item, new Vector3(transform.position.x, transform.position.y, transform.position.z - 5), transform.rotation);
+            GameObject new_ghost = Instantiate(health_item, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
         }
     }
 

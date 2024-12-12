@@ -25,6 +25,6 @@ public class UI : MonoBehaviour
             fill.SetActive(false);
         }
         health_bar.value = player_HP.GetComponent<PlayerHealth>().health / 100;
-        //mirror_bar.value = summonitem.GetComponent<SummonItem>().mirrorTime / 5;
+        mirror_bar.value = summonitem.GetComponent<SummonItem>().mirrorTime / 5;
     }
 }
