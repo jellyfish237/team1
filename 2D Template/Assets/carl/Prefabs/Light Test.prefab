@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recieved_time: 5
-  damageSpeed: 50
+  damageSpeed: 200
   item_class: {fileID: 0}
 --- !u!114 &-7140220637387226598
 MonoBehaviour:
