@@ -14,6 +14,7 @@ public class EnemyMovement : MonoBehaviour
     public float damage;
     public bool canTakeDamage;
     private Rigidbody2D RB;
+    public LayerMask castLayer;
 
     private bool reposition;
     private Vector3 new_position;
@@ -36,17 +37,14 @@ public class EnemyMovement : MonoBehaviour
         if (GetComponent<EnemyHealth>().takingDamage == true)
         {
             RB.velocity = (player.transform.position - transform.position).normalized * -GetComponent<EnemyHealth>().pushBack;
-            Debug.Log("0");
         }
         else if (reposition == true && GetComponent<EnemyHealth>().takingDamage == false)
         {
             RB.velocity = (new_position - transform.position).normalized * currentSpeed;
-            Debug.Log("1");
         }
         else if (hasLineOfSight && reposition == false && GetComponent<EnemyHealth>().takingDamage == false)
         {
             RB.velocity = (player.transform.position - transform.position).normalized * currentSpeed;
-            Debug.Log("2");
         }
         else
         {
@@ -57,7 +55,7 @@ public class EnemyMovement : MonoBehaviour
     private void FixedUpdate()
     {
         //Raycast distance
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position);
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, 1000, castLayer);
         if (ray.collider != null)
         {
             hasLineOfSight = ray.collider.CompareTag("Player");

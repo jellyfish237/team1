@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3476825433024833846}
   - component: {fileID: 1524030426469262137}
   - component: {fileID: 5933708237753589267}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: ghost
   m_Icon: {fileID: 0}
@@ -117,6 +117,9 @@ MonoBehaviour:
   timer: 1.5
   damage: 10
   canTakeDamage: 0
+  castLayer:
+    serializedVersion: 2
+    m_Bits: 55
   hasLineOfSight: 0
 --- !u!1 &9167842412313805123
 GameObject:
@@ -129,7 +132,7 @@ GameObject:
   - component: {fileID: 9105967150972737224}
   - component: {fileID: 8091710562296308529}
   - component: {fileID: 7544601378684472968}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Basic_Ghost_Idle_and_Movement-sheet 1_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

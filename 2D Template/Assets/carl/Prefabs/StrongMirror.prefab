@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1901372111233183860}
   - component: {fileID: 3405465590426163460}
   - component: {fileID: 6806461560961487824}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: StrongMirror
   m_TagString: MirrorLight
   m_Icon: {fileID: 0}
