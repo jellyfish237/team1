@@ -2793,6 +2793,7 @@ GameObject:
   - component: {fileID: 1687382102}
   - component: {fileID: 1687382101}
   - component: {fileID: 1687382106}
+  - component: {fileID: 1687382107}
   m_Layer: 0
   m_Name: AH
   m_TagString: Player
@@ -2812,7 +2813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c316689aeb6b14296fba212c501381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mirror: {fileID: 0}
+  mirror: {fileID: 7210535322571468346, guid: 987f517ae7a8048459745a8adf6c138f, type: 3}
   itempos: {fileID: 1750576139}
   Itemout: 118
   current_item: {fileID: 0}
@@ -2926,6 +2927,24 @@ MonoBehaviour:
   can_take_damage: 1
   i_frames: 0.5
   currentDi: {x: 0, y: 0}
+--- !u!114 &1687382107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687382100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b7d168fe5b0f94584719f1297cdd66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 1655461479858228080, guid: cfe0f060215da5d45905754ec13355cb, type: 3}
+  created_item: {fileID: 0}
+  itempos: {fileID: 1750576139}
+  player: {fileID: 1687382100}
+  stops_player_movement: 0
+  item_summon: {fileID: 1687382101}
 --- !u!1 &1711083508
 GameObject:
   m_ObjectHideFlags: 0
