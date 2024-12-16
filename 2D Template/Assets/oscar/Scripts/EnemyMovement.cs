@@ -7,8 +7,10 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] public float speed;
+    [SerializeField] public float maxSpeed;
     private float currentSpeed;
+    public float speed;
+    public float minSpeed;
     private GameObject player;
     public float timer;
     public float damage;
@@ -27,7 +29,8 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        currentSpeed = speed;
+        currentSpeed = Random.Range(minSpeed, maxSpeed);
+        speed = currentSpeed;
         RB = GetComponent<Rigidbody2D>();
     }
 
