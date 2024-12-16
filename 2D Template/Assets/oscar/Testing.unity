@@ -320,10 +320,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e602d8cbf1117c44845112a39f88ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSpeed: 0
   speed: 5
+  minSpeed: 0
   timer: 1.5
   damage: 10
   canTakeDamage: 0
+  castLayer:
+    serializedVersion: 2
+    m_Bits: 0
   hasLineOfSight: 0
 --- !u!212 &1218305618
 SpriteRenderer:
@@ -403,6 +408,10 @@ PrefabInstance:
     - target: {fileID: 1764911980354554685, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
       propertyPath: m_Name
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3766918274366639870, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
+      propertyPath: speed
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 5396919180261203273, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
       propertyPath: m_Color.b
@@ -753,6 +762,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1524030426469262137, guid: 72b654ed7405187429ea29579e59272a, type: 3}
+      propertyPath: minHP
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3476825433024833803, guid: 72b654ed7405187429ea29579e59272a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -808,6 +821,18 @@ PrefabInstance:
     - target: {fileID: 3476825433024833846, guid: 72b654ed7405187429ea29579e59272a, type: 3}
       propertyPath: m_LinearDrag
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933708237753589267, guid: 72b654ed7405187429ea29579e59272a, type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933708237753589267, guid: 72b654ed7405187429ea29579e59272a, type: 3}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933708237753589267, guid: 72b654ed7405187429ea29579e59272a, type: 3}
+      propertyPath: minSpeed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
