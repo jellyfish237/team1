@@ -18,14 +18,14 @@ public class room : MonoBehaviour
     {
         for (int i = 0; i < spawn_points.Length; i++)
         {
-            rng = Random.Range(0, 2);
+            rng = Random.Range(0, 3);
             if (rng == 0)
             {
                 GameObject new_ghost = Instantiate(ghost, new Vector3(spawn_points[i].transform.position.x, spawn_points[i].transform.position.y, spawn_points[i].transform.position.z), transform.rotation);
             }
-            else
+            else if (rng == 1)
             {
-                GameObject new_ghost = Instantiate(health_item, new Vector3(spawn_points[i].transform.position.x, spawn_points[i].transform.position.y, spawn_points[i].transform.position.z), spawn_points[i].transform.rotation);
+                GameObject new_health_item = Instantiate(health_item, new Vector3(spawn_points[i].transform.position.x, spawn_points[i].transform.position.y, spawn_points[i].transform.position.z), spawn_points[i].transform.rotation);
             }
         }
     }

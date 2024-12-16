@@ -80,6 +80,7 @@ public class EnemyMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             currentSpeed = -speed;
+            timer = Random.Range(0.7f, 1.5f);
             Invoke("TurnAround", timer);
         }
 
@@ -92,21 +93,22 @@ public class EnemyMovement : MonoBehaviour
         rng = Random.Range(0, 2);
         if (rng == 0)
         {
-            new_position.x = transform.position.x + Random.Range(-4, -5);
+            new_position.x = transform.position.x + Random.Range(-3, -4);
         }  
         if (rng == 1)
         {
-            new_position.x = transform.position.x + Random.Range(4, 5);
+            new_position.x = transform.position.x + Random.Range(3, 4);
         }
         rng = Random.Range(0, 2);
         if (rng == 0)
         {
-            new_position.y = transform.position.x + Random.Range(-4, -5);
+            new_position.y = transform.position.x + Random.Range(-3, -4);
         }
         if (rng == 1)
         {
-            new_position.y = transform.position.x + Random.Range(4, 5);
+            new_position.y = transform.position.x + Random.Range(3, 4);
         }
+        timer = Random.Range(0.7f, 1.5f);
         Invoke("Restart", timer);
     }
     private void Restart()
