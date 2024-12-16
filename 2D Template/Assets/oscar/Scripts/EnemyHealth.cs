@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public float health = 100;
     public float maxHP = 100;
+    public float minHP = 50;
     public float damageSpeed = 50;
     //make ghost take damage only when being chased
     [HideInInspector] public bool isInLight;
@@ -14,7 +15,7 @@ public class EnemyHealth : MonoBehaviour
     public bool takingDamage;
     void Start()
     {
-        
+        health = Random.Range(minHP, maxHP);
     }
     void Update()
     {
