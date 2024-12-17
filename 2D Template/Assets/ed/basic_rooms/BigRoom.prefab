@@ -160,7 +160,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 29812
+  m_InstanceId: 89448
 --- !u!1 &629411373615257397
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,38 +321,7 @@ MonoBehaviour:
   - {x: 0.50000006, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 29848
---- !u!1 &774802643161806423
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6327291545755662234}
-  m_Layer: 0
-  m_Name: spawnpoint (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6327291545755662234
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 774802643161806423}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.45, y: -0.44, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6155698112418776929}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_InstanceId: 89492
 --- !u!1 &1767213777434333743
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +482,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 29888
+  m_InstanceId: 89532
 --- !u!1 &2687648332054780910
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,7 +765,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 29856
+  m_InstanceId: 89500
 --- !u!114 &4117978942961346041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -845,7 +814,6 @@ Transform:
   - {fileID: 390687822596336655}
   - {fileID: 3756079126962729628}
   - {fileID: 8996435794508584706}
-  - {fileID: 6327291545755662234}
   m_Father: {fileID: 3932423674508711383}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1071,7 +1039,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.50000006, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 29694
+  m_InstanceId: 89320
 --- !u!1 &3871432310104348026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,7 +1200,7 @@ MonoBehaviour:
   - {x: 0.50000006, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 29688
+  m_InstanceId: 89314
 --- !u!1 &3932423673944555967
 GameObject:
   m_ObjectHideFlags: 0
@@ -1615,7 +1583,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 29726
+  m_InstanceId: 89360
 --- !u!114 &7247325800949476687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11993,7 +11961,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 29676
+  m_InstanceId: 89300
 --- !u!1 &5986510104939699799
 GameObject:
   m_ObjectHideFlags: 0
@@ -12245,7 +12213,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 29780
+  m_InstanceId: 89414
 --- !u!114 &878020393039760525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12453,7 +12421,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.50000006, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 29868
+  m_InstanceId: 89512
 --- !u!1 &8049270397884958155
 GameObject:
   m_ObjectHideFlags: 0
@@ -12705,7 +12673,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 29850
+  m_InstanceId: 89494
 --- !u!114 &2427850974543666758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12882,4 +12850,4 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 29884
+  m_InstanceId: 89528

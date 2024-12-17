@@ -7,10 +7,11 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] public float maxSpeed;
+    // please start defaulting variables here like this   >>   public float variable_name = 10;
+    [SerializeField] public float minSpeed = 6;
+    [SerializeField] public float maxSpeed = 8;
     private float currentSpeed;
     public float speed;
-    public float minSpeed;
     private GameObject player;
     public float timer;
     public float damage;
@@ -18,7 +19,7 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody2D RB;
     public LayerMask castLayer;
 
-    private bool reposition;
+    private bool repositioning;
     private Vector3 new_position;
     private int rng;
 
@@ -41,11 +42,11 @@ public class EnemyMovement : MonoBehaviour
         {
             RB.velocity = (player.transform.position - transform.position).normalized * -GetComponent<EnemyHealth>().pushBack;
         }
-        else if (reposition == true && GetComponent<EnemyHealth>().takingDamage == false)
+        else if (repositioning == true && GetComponent<EnemyHealth>().takingDamage == false)
         {
             RB.velocity = (new_position - transform.position).normalized * currentSpeed;
         }
-        else if (hasLineOfSight && reposition == false && GetComponent<EnemyHealth>().takingDamage == false)
+        else if (hasLineOfSight && repositioning == false && GetComponent<EnemyHealth>().takingDamage == false)
         {
             RB.velocity = (player.transform.position - transform.position).normalized * currentSpeed;
         }
@@ -92,7 +93,7 @@ public class EnemyMovement : MonoBehaviour
     private void TurnAround()
     {
         currentSpeed = speed;
-        reposition = true;
+        repositioning = true;
         rng = Random.Range(0, 2);
         if (rng == 0)
         {
@@ -116,6 +117,6 @@ public class EnemyMovement : MonoBehaviour
     }
     private void Restart()
     {
-        reposition = false;
+        repositioning = false;
     }
 }

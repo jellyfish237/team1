@@ -26,12 +26,12 @@ public class SummonItem : MonoBehaviour
     {
         if (canUseItem == true)
         {
-            if (Input.GetKeyDown(Itemout) && isItemActive == false)
+            if (Input.GetKeyDown(KeyCode.Mouse0) && isItemActive == false)
             {
                 isItemActive = true;
                 Summon(mirror);
             }
-            else if (Input.GetKeyUp(Itemout))
+            else if (Input.GetMouseButtonUp(0))
             {
                 Delete();
             }
@@ -59,7 +59,6 @@ public class SummonItem : MonoBehaviour
         Debug.Log("player wanted to use a " + item);
         ItemClass new_item = Instantiate(mirror, itempos.position, Quaternion.identity);
         new_item.itempos = itempos;
-        new_item.player = player;
         new_item.item_summon = this;
         current_item = new_item;
         isItemActive = true;
@@ -70,8 +69,9 @@ public class SummonItem : MonoBehaviour
         Destroy(current_item);
         isItemActive = false;
         enable_player_move();
-        ItemCooldownStart();
+        //ItemCooldownStart();
     }
+/*
     public void ItemCooldownStart()
     {
         StartCoroutine(ItemCooldown());
@@ -79,9 +79,10 @@ public class SummonItem : MonoBehaviour
     public IEnumerator ItemCooldown()
     {
         canUseItem = false;
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.0f);
         canUseItem = true;
     }
+*/
     public void enable_player_move()
     {
         GetComponent<player>().can_move = true;
