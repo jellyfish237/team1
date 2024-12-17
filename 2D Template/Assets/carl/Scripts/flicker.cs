@@ -51,14 +51,14 @@ public class flicker : MonoBehaviour
 
             if (flickerTimer > flickerInterval)
             {
-                leLight.intensity = Random.Range(0.5f, defaultInten);
+                leLight.intensity = Mathf.Lerp(GetComponent<Light2D>().intensity, Random.Range(0.5f, defaultInten), Random.Range(0.5f, 0.8f));
                 flickerInterval = Random.Range(0, maxFlicker);
                 flickerTimer = 0;
             }
             yield return null;
         }
 
-        leLight.intensity = defaultInten;
+        leLight.intensity = Mathf.Lerp(GetComponent<Light2D>().intensity, Random.Range(0.5f, defaultInten), Random.Range(0.5f, 0.8f));
         Flicker = false;
     }
 }
