@@ -8,8 +8,8 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     // please start defaulting variables here like this   >>   public float variable_name = 10;
-    [SerializeField] public float minSpeed = 6;
-    [SerializeField] public float maxSpeed = 8;
+    [SerializeField] public float minSpeed = 4;
+    [SerializeField] public float maxSpeed = 5;
     private float currentSpeed;
     public float speed;
     private GameObject player;
