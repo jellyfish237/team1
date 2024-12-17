@@ -56,7 +56,7 @@ public class SummonItem : MonoBehaviour
     }
     void Summon(ItemClass item)
     {
-        Debug.Log("player wanted to use a " + item);
+        //Debug.Log("player wanted to use a " + item);
         ItemClass new_item = Instantiate(mirror, itempos.position, Quaternion.identity);
         new_item.itempos = itempos;
         new_item.item_summon = this;
