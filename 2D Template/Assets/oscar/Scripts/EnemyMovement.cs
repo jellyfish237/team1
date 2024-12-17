@@ -33,6 +33,7 @@ public class EnemyMovement : MonoBehaviour
         currentSpeed = Random.Range(minSpeed, maxSpeed);
         speed = currentSpeed;
         RB = GetComponent<Rigidbody2D>();
+        StartWanderCooldown();
     }
 
     // Update is called once per frame
@@ -87,36 +88,49 @@ public class EnemyMovement : MonoBehaviour
             timer = Random.Range(0.7f, 1.5f);
             Invoke("TurnAround", timer);
         }
-
-
     }
     private void TurnAround()
     {
-        currentSpeed = speed;
+        currentSpeed = speed * 1.2f;
         repositioning = true;
         rng = Random.Range(0, 2);
         if (rng == 0)
         {
-            new_position.x = transform.position.x + Random.Range(-3, -4);
+            new_position.x = transform.position.x + Random.Range(-6, -8);
         }  
         if (rng == 1)
         {
-            new_position.x = transform.position.x + Random.Range(3, 4);
+            new_position.x = transform.position.x + Random.Range(6, 8);
         }
         rng = Random.Range(0, 2);
         if (rng == 0)
         {
-            new_position.y = transform.position.x + Random.Range(-3, -4);
+            new_position.y = transform.position.y + Random.Range(-6, -8);
         }
         if (rng == 1)
         {
-            new_position.y = transform.position.x + Random.Range(3, 4);
+            new_position.y = transform.position.y + Random.Range(6, 8);
         }
         timer = Random.Range(0.7f, 1.5f);
         Invoke("Restart", timer);
     }
+
+    public void StartWanderCooldown()
+    {
+        StartCoroutine(reposition_loop());
+    }
+    public IEnumerator reposition_loop()
+    {
+        yield return new WaitForSeconds(Random.Range(10.0f, 15.0f));
+        if (hasLineOfSight == false)
+        {
+            TurnAround();
+        }
+        StartWanderCooldown();
+    }
     private void Restart()
     {
         repositioning = false;
+        currentSpeed = speed;
     }
 }
