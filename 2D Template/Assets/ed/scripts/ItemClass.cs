@@ -17,7 +17,10 @@ public class ItemClass : MonoBehaviour
         StartCoroutine(UseTime());
         Debug.Log("created a " + item);
         created_item = Instantiate(item, itempos.position, Quaternion.identity);
-        created_item.transform.up = player.GetComponent<player>().currentDi;
+        Vector3 mousePos = Input.mousePosition;
+        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        Vector2 direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
+        created_item.transform.up = direction;
         if (stops_player_movement == true)
         {
             item_summon.GetComponent<SummonItem>().disable_player_move();

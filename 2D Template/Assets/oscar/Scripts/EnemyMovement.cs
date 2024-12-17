@@ -7,10 +7,11 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] public float maxSpeed;
+    // please start defaulting variables here like this   >>   public float variable_name = 10;
+    [SerializeField] public float minSpeed = 4;
+    [SerializeField] public float maxSpeed = 5;
     private float currentSpeed;
     public float speed;
-    public float minSpeed;
     private GameObject player;
     public float timer;
     public float damage;
@@ -18,7 +19,7 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody2D RB;
     public LayerMask castLayer;
 
-    private bool reposition;
+    private bool repositioning;
     private Vector3 new_position;
     private int rng;
 
@@ -26,12 +27,13 @@ public class EnemyMovement : MonoBehaviour
     
 
     // Start is called before the first frame update
-    void Start()
+    void Start() 
     {
         player = GameObject.FindGameObjectWithTag("Player");
         currentSpeed = Random.Range(minSpeed, maxSpeed);
         speed = currentSpeed;
         RB = GetComponent<Rigidbody2D>();
+        StartWanderCooldown();
     }
 
     // Update is called once per frame
@@ -41,11 +43,11 @@ public class EnemyMovement : MonoBehaviour
         {
             RB.velocity = (player.transform.position - transform.position).normalized * -GetComponent<EnemyHealth>().pushBack;
         }
-        else if (reposition == true && GetComponent<EnemyHealth>().takingDamage == false)
+        else if (repositioning == true && GetComponent<EnemyHealth>().takingDamage == false)
         {
             RB.velocity = (new_position - transform.position).normalized * currentSpeed;
         }
-        else if (hasLineOfSight && reposition == false && GetComponent<EnemyHealth>().takingDamage == false)
+        else if (hasLineOfSight && repositioning == false && GetComponent<EnemyHealth>().takingDamage == false)
         {
             RB.velocity = (player.transform.position - transform.position).normalized * currentSpeed;
         }
@@ -86,36 +88,49 @@ public class EnemyMovement : MonoBehaviour
             timer = Random.Range(0.7f, 1.5f);
             Invoke("TurnAround", timer);
         }
-
-
     }
     private void TurnAround()
     {
-        currentSpeed = speed;
-        reposition = true;
+        currentSpeed = speed * 1.2f;
+        repositioning = true;
         rng = Random.Range(0, 2);
         if (rng == 0)
         {
-            new_position.x = transform.position.x + Random.Range(-3, -4);
+            new_position.x = transform.position.x + Random.Range(-6, -8);
         }  
         if (rng == 1)
         {
-            new_position.x = transform.position.x + Random.Range(3, 4);
+            new_position.x = transform.position.x + Random.Range(6, 8);
         }
         rng = Random.Range(0, 2);
         if (rng == 0)
         {
-            new_position.y = transform.position.x + Random.Range(-3, -4);
+            new_position.y = transform.position.y + Random.Range(-6, -8);
         }
         if (rng == 1)
         {
-            new_position.y = transform.position.x + Random.Range(3, 4);
+            new_position.y = transform.position.y + Random.Range(6, 8);
         }
         timer = Random.Range(0.7f, 1.5f);
         Invoke("Restart", timer);
     }
+
+    public void StartWanderCooldown()
+    {
+        StartCoroutine(reposition_loop());
+    }
+    public IEnumerator reposition_loop()
+    {
+        yield return new WaitForSeconds(Random.Range(10.0f, 15.0f));
+        if (hasLineOfSight == false)
+        {
+            TurnAround();
+        }
+        StartWanderCooldown();
+    }
     private void Restart()
     {
-        reposition = false;
+        repositioning = false;
+        currentSpeed = speed;
     }
 }
