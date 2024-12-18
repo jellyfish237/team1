@@ -9,8 +9,17 @@ public class grid_room_generator : MonoBehaviour
     public int rng;
 
     // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
+        Generate();
+    }
+    public void Generate()
+    {
+        foreach (var room1 in room.Indicestorooms)
+            Debug.Log(room1);
+            
+
         for (int i = 0; i < Grid.Length; i++)
         {
             if (i == 24)
@@ -22,7 +31,7 @@ public class grid_room_generator : MonoBehaviour
             }
             else if (i != 24)
             {
-                rng = Random.Range(0, 11);
+                rng = Random.Range(1, rooms.Length);
                 GameObject new_room0 = Instantiate(rooms[rng], Grid[i].transform.position, Grid[i].transform.rotation);
                 new_room0.transform.SetParent(Grid[i].transform, true);
                 new_room0.GetComponent<room>().given_index = i;
