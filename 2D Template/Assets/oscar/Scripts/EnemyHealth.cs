@@ -13,12 +13,17 @@ public class EnemyHealth : MonoBehaviour
     [HideInInspector] public bool isInLight;
     public float pushBack;
     public bool takingDamage;
+    private Animator animator;
+    public float timer;
+
     void Start()
     {
         health = Random.Range(minHP, maxHP);
+        animator = GetComponent<Animator>();
     }
     void Update()
     {
+        
         if (isInLight && GetComponent<EnemyMovement>().hasLineOfSight == true)
         {
             takingDamage = true;
@@ -30,9 +35,13 @@ public class EnemyHealth : MonoBehaviour
         }
         if (health <= 0)
         {
-            GameObject.Destroy(gameObject);
-
+            animator.SetTrigger("Dead");
+            Invoke("ghostAnimation", timer);
         }
+    }
+    private void ghostAnimation()
+    {
+        Destroy(gameObject);
     }
    
 }

@@ -66,7 +66,7 @@ public class EnemyMovement : MonoBehaviour
         if (ray.collider != null)
         {
             hasLineOfSight = ray.collider.CompareTag("Player");
-            /*
+            
             if (hasLineOfSight)
             {
                 Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
@@ -75,12 +75,13 @@ public class EnemyMovement : MonoBehaviour
             {
                 Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
             }
-                */
+                
         }
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player") && (other.gameObject.GetComponent<player>().can_take_damage == true))
+            
+        if (other.gameObject.CompareTag("Player") && (other.gameObject.GetComponent<player>().can_take_damage))
         {
             other.gameObject.GetComponent<player>().StartDamageCooldown();
             
