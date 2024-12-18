@@ -22,7 +22,7 @@ public class grid_room_generator : MonoBehaviour
             }
             else if (i != 24)
             {
-                rng = Random.Range(0, 13);
+                rng = Random.Range(0, 11);
                 GameObject new_room0 = Instantiate(rooms[rng], Grid[i].transform.position, Grid[i].transform.rotation);
                 new_room0.transform.SetParent(Grid[i].transform, true);
                 new_room0.GetComponent<room>().given_index = i;
