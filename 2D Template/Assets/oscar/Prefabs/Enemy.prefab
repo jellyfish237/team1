@@ -103,7 +103,7 @@ MonoBehaviour:
   isInLight: 0
   pushBack: 1
   takingDamage: 0
-  timer: 0
+  timer: 0.8
 --- !u!114 &5933708237753589267
 MonoBehaviour:
   m_ObjectHideFlags: 0
