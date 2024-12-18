@@ -17,6 +17,7 @@ public class EnemyMovement : MonoBehaviour
     public float damage;
     public bool canTakeDamage;
     private Rigidbody2D RB;
+    private Animator animator;
     public LayerMask castLayer;
 
     private bool repositioning;
@@ -34,6 +35,7 @@ public class EnemyMovement : MonoBehaviour
         speed = currentSpeed;
         RB = GetComponent<Rigidbody2D>();
         StartWanderCooldown();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -82,7 +84,9 @@ public class EnemyMovement : MonoBehaviour
         {
             other.gameObject.GetComponent<player>().StartDamageCooldown();
             
-            other.gameObject.GetComponent<PlayerHealth>().health -= damage; 
+            other.gameObject.GetComponent<PlayerHealth>().health -= damage;
+
+            animator.SetTrigger("Attack");
         }
         if (other.gameObject.CompareTag("Player"))
         {
