@@ -1605,11 +1605,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc1348d49ebcc66429f47502479ec6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NWSE_BasicRoomPrefab: {fileID: 3932423674508711380, guid: 5a49da18f1a40c848abbb8ba63c3cf8d, type: 3}
-  NWE_BasicRoomPrefab: {fileID: 8965647743034911116, guid: 26997534bd9e3934fb3765b2a000e53b, type: 3}
-  NSE_BasicRoomPrefab: {fileID: 34306567201951988, guid: e7fc3b40793cb7b41b32ccf197ad4362, type: 3}
-  NWS_BasicRoomPrefab: {fileID: 5042680288271579283, guid: b3bbb0ef064d32146978fb08bd344c0f, type: 3}
-  WSE_BasicRoomPrefab: {fileID: 8570382918380480551, guid: a140aafd616063a4facb034da5271231, type: 3}
+  rooms:
+  - {fileID: 3932423674508711380, guid: 5a49da18f1a40c848abbb8ba63c3cf8d, type: 3}
+  - {fileID: 3932423674508711380, guid: eb05a4a27647fc24b809be0fe00fa735, type: 3}
+  - {fileID: 3932423674508711380, guid: 1fc1d680ba46bdc4c8f08ea89d8601a9, type: 3}
+  - {fileID: 3932423674508711380, guid: e634214968640fb4486484fc45cf43cd, type: 3}
+  - {fileID: 3932423674508711380, guid: 603953452ee9f1041b3fda9bda6281f4, type: 3}
+  - {fileID: 3932423674508711380, guid: 1b0911cc3faf5f94d819d5894f785532, type: 3}
+  - {fileID: 3932423674508711380, guid: f98e83f4439d7d546bdeb162b344277e, type: 3}
+  - {fileID: 3932423674508711380, guid: 9b85a0b352c18484eb1e3575c4c25837, type: 3}
+  - {fileID: 3932423674508711380, guid: 28ade846a15240247b22a62f0062d427, type: 3}
+  - {fileID: 3932423674508711380, guid: 91e639b7e39fafa41978f825f219320c, type: 3}
+  - {fileID: 3932423674508711380, guid: cde998387e5c8dd45ad618ba2d968e29, type: 3}
   Grid:
   - {fileID: 3447089302759659212}
   - {fileID: 9203127270491581499}

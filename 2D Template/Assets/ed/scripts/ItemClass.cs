@@ -15,7 +15,6 @@ public class ItemClass : MonoBehaviour
     void Start()
     {
         StartCoroutine(UseTime());
-        Debug.Log("created a " + item);
         created_item = Instantiate(item, itempos.position, Quaternion.identity);
         Vector3 mousePos = Input.mousePosition;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
@@ -28,7 +27,6 @@ public class ItemClass : MonoBehaviour
     }
     public IEnumerator UseTime()
     {
-        print("yes");
         yield return new WaitForSeconds(5.0f);
         Delete();
     }

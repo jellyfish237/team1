@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class grid_room_generator : MonoBehaviour
 {
-    public GameObject NWSE_BasicRoomPrefab;
-    public GameObject NWE_BasicRoomPrefab;
-    public GameObject NSE_BasicRoomPrefab;
-    public GameObject NWS_BasicRoomPrefab;
-    public GameObject WSE_BasicRoomPrefab;
+    public GameObject[] rooms;
     public GameObject[] Grid;
     public int rng;
 
@@ -17,10 +13,21 @@ public class grid_room_generator : MonoBehaviour
     {
         for (int i = 0; i < Grid.Length; i++)
         {
-            GameObject new_room0 = Instantiate(NWSE_BasicRoomPrefab, Grid[i].transform.position, Grid[i].transform.rotation);
-            new_room0.transform.SetParent(Grid[i].transform, true);
-            new_room0.GetComponent<room>().given_index = i;
-            room.Indicestorooms.Add(i, new_room0.GetComponent<room>());
+            if (i == 24)
+            {
+                GameObject new_room = Instantiate(rooms[0], Grid[i].transform.position, Grid[i].transform.rotation);
+                new_room.transform.SetParent(Grid[i].transform, true);
+                new_room.GetComponent<room>().given_index = i;
+                room.Indicestorooms.Add(i, new_room.GetComponent<room>());
+            }
+            else if (i != 24)
+            {
+                rng = Random.Range(0, 13);
+                GameObject new_room0 = Instantiate(rooms[rng], Grid[i].transform.position, Grid[i].transform.rotation);
+                new_room0.transform.SetParent(Grid[i].transform, true);
+                new_room0.GetComponent<room>().given_index = i;
+                room.Indicestorooms.Add(i, new_room0.GetComponent<room>());
+            }
         }
 
         //GameObject new_room0 = Instantiate(NWSE_BasicRoomPrefab, Grid[24].transform.position, Grid[24].transform.rotation);
@@ -105,6 +112,7 @@ public class grid_room_generator : MonoBehaviour
         */
         foreach (var room1 in room.Indicestorooms)
         {
+            Debug.Log("started assigning teleports");
             /// NORTH TO SOUTH
             if (room.Indicestorooms.ContainsKey(room1.Key - 7))
             {
@@ -112,6 +120,7 @@ public class grid_room_generator : MonoBehaviour
                 GameObject sDoor = FindChild(room.Indicestorooms[room1.Key - 7].gameObject, gameObject => gameObject.name == "S_teleport");
                 sDoor.GetComponent<teleport>().next_position = nDoor.GetComponent<teleport>();
                 nDoor.GetComponent<teleport>().next_position = sDoor.GetComponent<teleport>();
+                Debug.Log("the room: " + room1.Key + "north teleport is connected to the " + (room1.Key - 7) + " south teleport");
             }
             else
             {
@@ -119,6 +128,7 @@ public class grid_room_generator : MonoBehaviour
                 GameObject sDoor = FindChild(room.Indicestorooms[room1.Key + 42].gameObject, gameObject => gameObject.name == "S_teleport");
                 sDoor.GetComponent<teleport>().next_position = nDoor.GetComponent<teleport>();
                 nDoor.GetComponent<teleport>().next_position = sDoor.GetComponent<teleport>();
+                Debug.Log("the room: " + room1.Key + "north teleport is connected to the " + (room1.Key + 42) + " south teleport");
             }
             /// WEST TO EAST
             /// 
@@ -129,6 +139,7 @@ public class grid_room_generator : MonoBehaviour
                     GameObject eDoor = FindChild(room.Indicestorooms[room1.Key - 1].gameObject, gameObject => gameObject.name == "E_teleport");
                     eDoor.GetComponent<teleport>().next_position = wDoor.GetComponent<teleport>();
                     wDoor.GetComponent<teleport>().next_position = eDoor.GetComponent<teleport>();
+                    Debug.Log("the room: " + room1.Key + "west teleport is connected to the " + (room1.Key - 1) + " east teleport");
                 }
                 
                 else
@@ -140,25 +151,20 @@ public class grid_room_generator : MonoBehaviour
                         GameObject eDoor = FindChild(room.Indicestorooms[room1.Key + 6].gameObject, gameObject => gameObject.name == "E_teleport");
                         eDoor.GetComponent<teleport>().next_position = wDoor.GetComponent<teleport>();
                         wDoor.GetComponent<teleport>().next_position = eDoor.GetComponent<teleport>();
+                        Debug.Log("the room: " + room1.Key + "west teleport is connected to the " + (room1.Key + 6) + " east teleport");
                     }
                 }
             }
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public GameObject FindChild(GameObject parent, System.Predicate<GameObject> search_children)
     {
-        foreach (Transform child in parent.GetComponentsInChildren<Transform>())
+        foreach (Transform child in parent.GetComponentsInChildren<Transform>(true))
         {
             if (search_children.Invoke(child.gameObject))
                 return child.gameObject;
         }
-
         return null;
     }
 }

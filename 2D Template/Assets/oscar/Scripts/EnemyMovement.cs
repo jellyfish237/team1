@@ -66,6 +66,7 @@ public class EnemyMovement : MonoBehaviour
         if (ray.collider != null)
         {
             hasLineOfSight = ray.collider.CompareTag("Player");
+            /*
             if (hasLineOfSight)
             {
                 Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
@@ -74,7 +75,8 @@ public class EnemyMovement : MonoBehaviour
             {
                 Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
             }
-        } 
+                */
+        }
     }
     private void OnCollisionEnter2D(Collision2D other)
     {

@@ -30,5 +30,8 @@ public class teleport : MonoBehaviour
             }
         }
     }
-
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(transform.position, next_position.transform.position);
+    }
 }

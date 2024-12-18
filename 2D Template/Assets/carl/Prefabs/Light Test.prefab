@@ -175,8 +175,8 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 20.39
-  m_PointLightOuterAngle: 20.39
+  m_PointLightInnerAngle: 20.07
+  m_PointLightOuterAngle: 37.94
   m_PointLightInnerRadius: 0.16204008
   m_PointLightOuterRadius: 8.0527
   m_ShapeLightParametricSides: 5
@@ -231,7 +231,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recieved_time: 5
-  damageSpeed: 99999
   item_class: {fileID: 0}
 --- !u!114 &-7140220637387226598
 MonoBehaviour:

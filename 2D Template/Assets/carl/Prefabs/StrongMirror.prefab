@@ -170,8 +170,8 @@ MonoBehaviour:
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
-  m_PointLightInnerAngle: 66.9
-  m_PointLightOuterAngle: 66.9
+  m_PointLightInnerAngle: 66.69
+  m_PointLightOuterAngle: 76.56
   m_PointLightInnerRadius: 0.16204008
   m_PointLightOuterRadius: 7.0206695
   m_ShapeLightParametricSides: 5
@@ -231,12 +231,12 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.0062711025, y: 0.01656431}
-      - {x: -21.808186, y: 29.882141}
-      - {x: -17.954882, y: 32.411743}
-      - {x: -12.227002, y: 34.331245}
-      - {x: -0.15017354, y: 36.13357}
-      - {x: 10.787582, y: 34.851788}
-      - {x: 21.973896, y: 29.993288}
+      - {x: -20.275444, y: 27.675426}
+      - {x: -16.780066, y: 30.745605}
+      - {x: -11.30756, y: 33.02534}
+      - {x: -0.43756786, y: 34.86202}
+      - {x: 9.944245, y: 33.847095}
+      - {x: 20.983313, y: 28.670025}
   m_UseDelaunayMesh: 0
 --- !u!114 &6806461560961487824
 MonoBehaviour:
@@ -251,5 +251,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recieved_time: 5
-  damageSpeed: 100
   item_class: {fileID: 0}
