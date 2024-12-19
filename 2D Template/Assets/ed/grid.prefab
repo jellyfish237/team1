@@ -1666,6 +1666,7 @@ MonoBehaviour:
   - {fileID: 5661077875031612825}
   - {fileID: 8866638668676227206}
   - {fileID: 8493204723868476524}
+  keyghost: {fileID: 3476825433024833807, guid: aba9c4d9957c1de47934a035954807b5, type: 3}
   rng: 0
 --- !u!1 &4101819184349531795
 GameObject:

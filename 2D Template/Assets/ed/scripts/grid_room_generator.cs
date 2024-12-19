@@ -6,12 +6,14 @@ public class grid_room_generator : MonoBehaviour
 {
     public GameObject[] rooms;
     public GameObject[] Grid;
+    public GameObject keyghost;
     public int rng;
 
     // Start is called before the first frame update
 
     private void Start()
     {
+        SpawnKeyGhost();
         Generate();
     }
     public void Generate()
@@ -130,17 +132,23 @@ public class grid_room_generator : MonoBehaviour
             {
                 GameObject nDoor = FindChild(room1.Value.gameObject, gameObject => gameObject.name == "N_teleport");
                 GameObject sDoor = FindChild(room.Indicestorooms[room1.Key - 7].gameObject, gameObject => gameObject.name == "S_teleport");
-                sDoor.GetComponent<teleport>().next_position = nDoor.GetComponent<teleport>();
-                nDoor.GetComponent<teleport>().next_position = sDoor.GetComponent<teleport>();
-                Debug.Log("the room: " + room1.Key + "north teleport is connected to the " + (room1.Key - 7) + " south teleport");
+                if (nDoor != null && sDoor != null)
+                {
+                    sDoor.GetComponent<teleport>().next_position = nDoor.GetComponent<teleport>();
+                    nDoor.GetComponent<teleport>().next_position = sDoor.GetComponent<teleport>();
+                    Debug.Log("the room: " + room1.Key + "north teleport is connected to the " + (room1.Key - 7) + " south teleport");
+                }
             }
             else
             {
                 GameObject nDoor = FindChild(room1.Value.gameObject, gameObject => gameObject.name == "N_teleport");
                 GameObject sDoor = FindChild(room.Indicestorooms[room1.Key + 42].gameObject, gameObject => gameObject.name == "S_teleport");
-                sDoor.GetComponent<teleport>().next_position = nDoor.GetComponent<teleport>();
-                nDoor.GetComponent<teleport>().next_position = sDoor.GetComponent<teleport>();
-                Debug.Log("the room: " + room1.Key + "north teleport is connected to the " + (room1.Key + 42) + " south teleport");
+                if (nDoor != null && sDoor != null)
+                {
+                    sDoor.GetComponent<teleport>().next_position = nDoor.GetComponent<teleport>();
+                    nDoor.GetComponent<teleport>().next_position = sDoor.GetComponent<teleport>();
+                    Debug.Log("the room: " + room1.Key + "north teleport is connected to the " + (room1.Key + 42) + " south teleport");
+                }
             }
             /// WEST TO EAST
             /// 
@@ -149,9 +157,12 @@ public class grid_room_generator : MonoBehaviour
                 {
                     GameObject wDoor = FindChild(room1.Value.gameObject, gameObject => gameObject.name == "W_teleport");
                     GameObject eDoor = FindChild(room.Indicestorooms[room1.Key - 1].gameObject, gameObject => gameObject.name == "E_teleport");
-                    eDoor.GetComponent<teleport>().next_position = wDoor.GetComponent<teleport>();
-                    wDoor.GetComponent<teleport>().next_position = eDoor.GetComponent<teleport>();
-                    Debug.Log("the room: " + room1.Key + "west teleport is connected to the " + (room1.Key - 1) + " east teleport");
+                    if (wDoor != null && eDoor != null)
+                    {
+                        eDoor.GetComponent<teleport>().next_position = wDoor.GetComponent<teleport>();
+                        wDoor.GetComponent<teleport>().next_position = eDoor.GetComponent<teleport>();
+                        Debug.Log("the room: " + room1.Key + "west teleport is connected to the " + (room1.Key - 1) + " east teleport");
+                    }
                 }
 
                 else
@@ -161,13 +172,22 @@ public class grid_room_generator : MonoBehaviour
                         Debug.Log(room1.Key);
                         GameObject wDoor = FindChild(room1.Value.gameObject, gameObject => gameObject.name == "W_teleport");
                         GameObject eDoor = FindChild(room.Indicestorooms[room1.Key + 6].gameObject, gameObject => gameObject.name == "E_teleport");
-                        eDoor.GetComponent<teleport>().next_position = wDoor.GetComponent<teleport>();
-                        wDoor.GetComponent<teleport>().next_position = eDoor.GetComponent<teleport>();
-                        Debug.Log("the room: " + room1.Key + "west teleport is connected to the " + (room1.Key + 6) + " east teleport");
+                        if (wDoor != null && eDoor != null)
+                        {
+                            eDoor.GetComponent<teleport>().next_position = wDoor.GetComponent<teleport>();
+                            wDoor.GetComponent<teleport>().next_position = eDoor.GetComponent<teleport>();
+                            Debug.Log("the room: " + room1.Key + "west teleport is connected to the " + (room1.Key + 6) + " east teleport");
+                        }
                     }
                 }
             }
         }
+    }
+
+    public void SpawnKeyGhost()
+    {
+        rng = Random.Range(1, Grid.Length);
+        GameObject new_keyghost = Instantiate(keyghost, Grid[rng].transform.position, Grid[rng].transform.rotation);
     }
     
 
