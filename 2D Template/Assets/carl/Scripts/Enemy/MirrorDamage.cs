@@ -6,11 +6,13 @@ public class MirrorDamage : MonoBehaviour
 {
     public float recieved_time = 5.0f;
     public ItemClass item_class;
+    public float damageSpeed = 50;
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("ghost"))
         {
+            other.gameObject.GetComponent<EnemyHealth>().currentMirror = this;
             other.gameObject.GetComponent<EnemyHealth>().isInLight = true;
         }
     }
@@ -19,6 +21,7 @@ public class MirrorDamage : MonoBehaviour
         if (other.gameObject.CompareTag("ghost"))
         {
             other.gameObject.GetComponent<EnemyHealth>().isInLight = false;
+            other.gameObject.GetComponent<EnemyHealth>().currentMirror = null;
         }
     }
 }
