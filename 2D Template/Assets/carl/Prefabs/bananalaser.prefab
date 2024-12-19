@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2139073953893392020}
   - component: {fileID: 2139073953893392019}
   - component: {fileID: 2139073953893392018}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bananalaser
   m_TagString: MirrorLight
   m_Icon: {fileID: 0}
@@ -366,4 +366,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recieved_time: 999
   item_class: {fileID: 0}
-  damageSpeed: 500
+  damageSpeed: 9999
