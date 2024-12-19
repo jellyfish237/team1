@@ -366,4 +366,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recieved_time: 999
   item_class: {fileID: 0}
-  damageSpeed: 9999
+  damageSpeed: 500
