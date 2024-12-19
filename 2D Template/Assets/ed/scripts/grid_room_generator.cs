@@ -17,8 +17,11 @@ public class grid_room_generator : MonoBehaviour
     public void Generate()
     {
         foreach (var room1 in room.Indicestorooms)
-            Debug.Log(room1);
-            
+        {
+            Destroy(room1.Value.gameObject);
+        }
+        room.Indicestorooms.Clear();
+
 
         for (int i = 0; i < Grid.Length; i++)
         {
@@ -150,7 +153,7 @@ public class grid_room_generator : MonoBehaviour
                     wDoor.GetComponent<teleport>().next_position = eDoor.GetComponent<teleport>();
                     Debug.Log("the room: " + room1.Key + "west teleport is connected to the " + (room1.Key - 1) + " east teleport");
                 }
-                
+
                 else
                 {
                     if (room.Indicestorooms.ContainsKey(room1.Key + 6))
@@ -166,6 +169,7 @@ public class grid_room_generator : MonoBehaviour
             }
         }
     }
+    
 
     public GameObject FindChild(GameObject parent, System.Predicate<GameObject> search_children)
     {

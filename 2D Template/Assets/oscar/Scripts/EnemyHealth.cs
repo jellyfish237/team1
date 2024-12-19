@@ -8,9 +8,10 @@ public class EnemyHealth : MonoBehaviour
     public float health = 100;
     public float maxHP = 100;
     public float minHP = 50;
-    public float damageSpeed = 50;
+    
     //make ghost take damage only when being chased
     [HideInInspector] public bool isInLight;
+    [HideInInspector] public MirrorDamage currentMirror;
     public float pushBack;
     public bool takingDamage;
     private Animator animator;
@@ -27,7 +28,7 @@ public class EnemyHealth : MonoBehaviour
         if (isInLight && GetComponent<EnemyMovement>().hasLineOfSight == true)
         {
             takingDamage = true;
-            health -= Time.deltaTime * damageSpeed;
+            health -= Time.deltaTime * currentMirror.damageSpeed;
         }
         else
         {
