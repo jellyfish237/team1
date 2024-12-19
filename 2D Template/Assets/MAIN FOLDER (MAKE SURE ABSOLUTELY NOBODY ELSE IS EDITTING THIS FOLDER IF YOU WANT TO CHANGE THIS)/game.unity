@@ -336,18 +336,6 @@ PrefabInstance:
       propertyPath: summonitem
       value: 
       objectReference: {fileID: 1482493973}
-    - target: {fileID: 5579654040104439007, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
-      propertyPath: maxHP
-      value: 10000
-      objectReference: {fileID: 0}
-    - target: {fileID: 5579654040104439007, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
-      propertyPath: health
-      value: 10000
-      objectReference: {fileID: 0}
-    - target: {fileID: 5711052692776294148, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
-      propertyPath: m_PointLightOuterRadius
-      value: 99999
-      objectReference: {fileID: 0}
     - target: {fileID: 7020219246899535781, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -391,10 +379,6 @@ PrefabInstance:
     - target: {fileID: 7020219246899535781, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7279252747185239063, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
-      propertyPath: orthographic size
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7563724245548697955, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
       propertyPath: m_AnchorMax.x
