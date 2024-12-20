@@ -41,6 +41,11 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GetComponent<EnemyHealth>().health <= 0)
+        {
+            
+            currentSpeed = 0;
+        }
         if (GetComponent<EnemyHealth>().takingDamage == true)
         {
             RB.velocity = (player.transform.position - transform.position).normalized * -GetComponent<EnemyHealth>().pushBack;
