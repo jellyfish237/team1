@@ -47,10 +47,15 @@ public class SummonItem : MonoBehaviour
         {
             mirrorTime -= Time.deltaTime;
             mirrorTime = Mathf.Clamp(mirrorTime, 0.0f, 5.0f);
+            if (mirrorTime <= 0.0f)
+            {
+                Delete();
+            }
         }
         if (!isItemActive)
         {
-            mirrorTime = 5.0f;
+            mirrorTime += Time.deltaTime/4;
+            mirrorTime = Mathf.Clamp(mirrorTime, 0.0f, 5.0f);
         }
         //Debug.Log(mirrorTime);
     }
@@ -69,9 +74,9 @@ public class SummonItem : MonoBehaviour
         Destroy(current_item);
         isItemActive = false;
         enable_player_move();
-        //ItemCooldownStart();
+        ItemCooldownStart();
     }
-/*
+
     public void ItemCooldownStart()
     {
         StartCoroutine(ItemCooldown());
@@ -79,10 +84,10 @@ public class SummonItem : MonoBehaviour
     public IEnumerator ItemCooldown()
     {
         canUseItem = false;
-        yield return new WaitForSeconds(0.0f);
+        yield return new WaitForSeconds(0.3f);
         canUseItem = true;
     }
-*/
+
     public void enable_player_move()
     {
         GetComponent<player>().can_move = true;

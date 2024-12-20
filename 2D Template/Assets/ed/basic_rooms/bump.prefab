@@ -160,7 +160,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 49050
+  m_InstanceId: 53844
 --- !u!1 &1767213777434333743
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +321,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 49140
+  m_InstanceId: 53938
 --- !u!1 &2161366461593130954
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,7 +482,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 48932
+  m_InstanceId: 53726
 --- !u!1 &2687648332054780910
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,7 +765,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 49108
+  m_InstanceId: 53902
 --- !u!114 &4117978942961346041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1039,7 +1039,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.50000006, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 48902
+  m_InstanceId: 53696
 --- !u!1 &3871432310104348026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,7 +1200,7 @@ MonoBehaviour:
   - {x: 0.50000006, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 48894
+  m_InstanceId: 53684
 --- !u!1 &3932423673944555967
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,7 +1337,9 @@ MonoBehaviour:
   - {fileID: 6108458982472994603}
   given_index: 0
   ghost: {fileID: 3476825433024833807, guid: 72b654ed7405187429ea29579e59272a, type: 3}
+  red_ghost: {fileID: 6234271153853851945, guid: a3336126944c4b64da27fd47aa0759ff, type: 3}
   health_item: {fileID: 2566253146878796310, guid: 5dcd7246749696f4ca237698699e4172, type: 3}
+  objects: {fileID: 0}
 --- !u!1 &3932423675265923933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,7 +1591,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 48948
+  m_InstanceId: 53742
 --- !u!114 &7247325800949476687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1895,7 +1897,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 49084
+  m_InstanceId: 53878
 --- !u!1 &4772583888832116900
 GameObject:
   m_ObjectHideFlags: 0
@@ -10308,7 +10310,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 48882
+  m_InstanceId: 53672
 --- !u!1 &5502594479828216833
 GameObject:
   m_ObjectHideFlags: 0
@@ -10469,7 +10471,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 49026
+  m_InstanceId: 53820
 --- !u!1 &5986510104939699799
 GameObject:
   m_ObjectHideFlags: 0
@@ -10721,7 +10723,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 49006
+  m_InstanceId: 53800
 --- !u!114 &878020393039760525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10929,7 +10931,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.50000006, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 49120
+  m_InstanceId: 53916
 --- !u!1 &6986130501701735012
 GameObject:
   m_ObjectHideFlags: 0
@@ -11090,7 +11092,7 @@ MonoBehaviour:
   - {x: 0.50000006, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 48920
+  m_InstanceId: 53714
 --- !u!1 &7769796294532799596
 GameObject:
   m_ObjectHideFlags: 0
@@ -11251,7 +11253,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 49114
+  m_InstanceId: 53910
 --- !u!1 &8049270397884958155
 GameObject:
   m_ObjectHideFlags: 0
@@ -11503,7 +11505,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 49100
+  m_InstanceId: 53894
 --- !u!114 &2427850974543666758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11680,7 +11682,7 @@ MonoBehaviour:
   - {x: 0.50000006, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 49102
+  m_InstanceId: 53896
 --- !u!1001 &1245500765212612347
 PrefabInstance:
   m_ObjectHideFlags: 0

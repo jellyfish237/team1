@@ -3,7 +3,11 @@ guid: 88d662c2caf39a04bac5990af10cc8f9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ghost: {fileID: 3476825433024833807, guid: 72b654ed7405187429ea29579e59272a, type: 3}
+  - red_ghost: {fileID: 6234271153853851945, guid: a3336126944c4b64da27fd47aa0759ff, type: 3}
+  - health_item: {fileID: 2566253146878796310, guid: 5dcd7246749696f4ca237698699e4172, type: 3}
+  - objects: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
