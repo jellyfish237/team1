@@ -135,7 +135,7 @@ MonoBehaviour:
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
   m_ShadowIntensityEnabled: 1
-  m_ShadowIntensity: 0.75
+  m_ShadowIntensity: 1
   m_ShadowVolumeIntensityEnabled: 1
   m_ShadowVolumeIntensity: 1
   m_Vertices:
@@ -250,5 +250,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc14552f655d26a4ab6030bfba07eb2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recieved_time: 5
   item_class: {fileID: 0}
+  damageSpeed: 50

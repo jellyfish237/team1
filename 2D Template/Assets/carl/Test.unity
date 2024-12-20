@@ -3898,6 +3898,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bananalaser
       objectReference: {fileID: 0}
+    - target: {fileID: 2139073953893392017, guid: 313169d166cd4154f9a9280a6cd9babc, type: 3}
+      propertyPath: m_TagString
+      value: MirrorLight
+      objectReference: {fileID: 0}
     - target: {fileID: 2139073953893392021, guid: 313169d166cd4154f9a9280a6cd9babc, type: 3}
       propertyPath: m_Triangles.Array.data[153]
       value: 10
