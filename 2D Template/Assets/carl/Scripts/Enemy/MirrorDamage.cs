@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MirrorDamage : MonoBehaviour
 {
-    public float recieved_time = 5.0f;
     public ItemClass item_class;
     public float damageSpeed = 50;
 
