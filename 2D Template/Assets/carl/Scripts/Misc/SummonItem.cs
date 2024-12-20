@@ -54,7 +54,7 @@ public class SummonItem : MonoBehaviour
         }
         if (!isItemActive)
         {
-            mirrorTime += Time.deltaTime/4;
+            mirrorTime += Time.deltaTime;
             mirrorTime = Mathf.Clamp(mirrorTime, 0.0f, 5.0f);
         }
         //Debug.Log(mirrorTime);
