@@ -9,10 +9,12 @@ public class SummonItem : MonoBehaviour
     public KeyCode Itemout;
     private GameObject player;
     public ItemClass current_item;
-    private bool isItemActive;
+    private bool isItemActive = false;
     private bool canUseItem = true;
     public float activeTimer = 5.0f;
     public float mirrorTime = 5.0f;
+    IEnumerator co;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,17 +26,15 @@ public class SummonItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canUseItem == true)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && isItemActive == false && mirrorTime != 0.0f)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0) && isItemActive == false)
-            {
-                isItemActive = true;
-                Summon(mirror);
-            }
-            else if (Input.GetMouseButtonUp(0))
-            {
-                Delete();
-            }
+            StopAllCoroutines();
+            isItemActive = true;
+            Summon(mirror);
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            Delete();
         }
 
         if (current_item)
@@ -52,7 +52,7 @@ public class SummonItem : MonoBehaviour
                 Delete();
             }
         }
-        if (!isItemActive)
+        if (!isItemActive && canUseItem)
         {
             mirrorTime += Time.deltaTime;
             mirrorTime = Mathf.Clamp(mirrorTime, 0.0f, 5.0f);
@@ -84,7 +84,7 @@ public class SummonItem : MonoBehaviour
     public IEnumerator ItemCooldown()
     {
         canUseItem = false;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(2.0f);
         canUseItem = true;
     }
 
