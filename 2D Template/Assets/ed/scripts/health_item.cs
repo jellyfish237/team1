@@ -26,6 +26,7 @@ public class health_item : MonoBehaviour
                 Debug.Log("no");
                 collision.gameObject.GetComponent<PlayerHealth>().health += healing;
                 collision.gameObject.GetComponent<PlayerHealth>().health = Mathf.Clamp(collision.gameObject.GetComponent<PlayerHealth>().health, -1, collision.gameObject.GetComponent<PlayerHealth>().maxHP);
+                collision.GetComponent<PlayerHealth>().healParticle();
                 Destroy(gameObject);
             }
         }
