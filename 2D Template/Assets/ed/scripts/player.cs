@@ -53,7 +53,7 @@ public class player : MonoBehaviour
     }
     public IEnumerator damage_cooldown()
     {
-        cam.
+        cam.GetComponent<camera_shake>().StartCoroutine1();
         can_take_damage = false;
         yield return new WaitForSeconds(i_frames);
         can_take_damage = true;
