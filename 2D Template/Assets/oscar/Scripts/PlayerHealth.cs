@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
         }
         if (isDead == true)
         {
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
         }
     }
     public void healParticle()
