@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour
     public float health;
     public float maxHP;
     private bool isDead;
-    [SerializeField] ParticleSystem healthParticle = null;
+    public ParticleSystem healthParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +32,6 @@ public class PlayerHealth : MonoBehaviour
     }
     public void healParticle()
     {
-        //play the particles
         healthParticle.Play();
     }
 }
