@@ -7396,14 +7396,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Light Test
       objectReference: {fileID: 0}
-    - target: {fileID: 1655461479858228082, guid: cfe0f060215da5d45905754ec13355cb, type: 3}
-      propertyPath: m_Color.a
-      value: 0.13333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 1655461479858228082, guid: cfe0f060215da5d45905754ec13355cb, type: 3}
-      propertyPath: m_FalloffIntensity
-      value: 0.205
-      objectReference: {fileID: 0}
     - target: {fileID: 1655461479858228095, guid: cfe0f060215da5d45905754ec13355cb, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -7761,6 +7753,7 @@ MonoBehaviour:
   can_move: 1
   can_take_damage: 1
   i_frames: 0.5
+  cam: {fileID: 0}
   currentDi: {x: 0, y: 0}
 --- !u!114 &1687382108
 MonoBehaviour:
@@ -17215,22 +17208,6 @@ PrefabInstance:
     - target: {fileID: 1817220615035655669, guid: 3c5ed7c10612cb345a06d21ce6162ed9, type: 3}
       propertyPath: m_Name
       value: StrongMirror
-      objectReference: {fileID: 0}
-    - target: {fileID: 5639446607360447334, guid: 3c5ed7c10612cb345a06d21ce6162ed9, type: 3}
-      propertyPath: m_Color.a
-      value: 0.05882353
-      objectReference: {fileID: 0}
-    - target: {fileID: 5639446607360447334, guid: 3c5ed7c10612cb345a06d21ce6162ed9, type: 3}
-      propertyPath: m_FalloffIntensity
-      value: 0.187
-      objectReference: {fileID: 0}
-    - target: {fileID: 5639446607360447334, guid: 3c5ed7c10612cb345a06d21ce6162ed9, type: 3}
-      propertyPath: m_PointLightInnerAngle
-      value: 66.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5639446607360447334, guid: 3c5ed7c10612cb345a06d21ce6162ed9, type: 3}
-      propertyPath: m_PointLightOuterAngle
-      value: 80.29
       objectReference: {fileID: 0}
     - target: {fileID: 8676149905452745416, guid: 3c5ed7c10612cb345a06d21ce6162ed9, type: 3}
       propertyPath: m_RootOrder
