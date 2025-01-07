@@ -17,13 +17,17 @@ public class EnemyHealth : MonoBehaviour
     private Animator animator;
     public float timer;
     private Rigidbody2D RB;
+
+    [SerializeField] FloatingHealthbar healthbar;
     
 
     void Start()
     {
+        //health = maxHP;
         health = Random.Range(minHP, maxHP);
         animator = GetComponent<Animator>();
         RB = GetComponent<Rigidbody2D>();
+        healthbar = GetComponentInChildren<FloatingHealthbar>();
     }
     void Update()
     {
@@ -32,6 +36,7 @@ public class EnemyHealth : MonoBehaviour
         {
             takingDamage = true;
             health -= Time.deltaTime * currentMirror.damageSpeed;
+            healthbar.UpdateHealthBar(health, maxHP);
         }
         else
         {
