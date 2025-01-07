@@ -16,13 +16,14 @@ public class EnemyMovement : MonoBehaviour
     public float timer;
     public float damage;
     public bool canTakeDamage;
+    public bool canAttack = true;
     private Rigidbody2D RB;
     private Animator animator;
     public LayerMask castLayer;
-
     private bool repositioning;
     private Vector3 new_position;
     private int rng;
+    public int id;
 
     [HideInInspector] public bool hasLineOfSight = false;
     
@@ -81,27 +82,18 @@ public class EnemyMovement : MonoBehaviour
                 Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
             }
                 
+            if (ray.distance <= 1.0 && hasLineOfSight && canAttack == true)
+            {
+                StartAttackOrder();
+            }
+            else if (ray.distance >= 1.0 && hasLineOfSight && canAttack == true)
+            {
+                StopAllCoroutines();
+            }
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-            
-        if (other.gameObject.CompareTag("Player") && (other.gameObject.GetComponent<player>().can_take_damage))
-        {
-            other.gameObject.GetComponent<player>().StartDamageCooldown();
-            
-            other.gameObject.GetComponent<PlayerHealth>().health -= damage;
-
-            animator.SetTrigger("Attack");
-        }
-        if (other.gameObject.CompareTag("Player"))
-        {
-            currentSpeed = -speed;
-            timer = Random.Range(0.7f, 1.5f);
-            Invoke("TurnAround", timer);
-        }
-    }
-    private void TurnAround()
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    private void Reposition()
     {
         currentSpeed = speed * 1.2f;
         repositioning = true;
@@ -126,7 +118,6 @@ public class EnemyMovement : MonoBehaviour
         timer = Random.Range(0.7f, 1.5f);
         Invoke("Restart", timer);
     }
-
     public void StartWanderCooldown()
     {
         StartCoroutine(reposition_loop());
@@ -136,13 +127,47 @@ public class EnemyMovement : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(10.0f, 15.0f));
         if (hasLineOfSight == false)
         {
-            TurnAround();
+            Reposition();
         }
         StartWanderCooldown();
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public IEnumerator attack_loop()
+    {
+        if (id == 0)
+        {
+            canAttack = false;
+            animator.SetTrigger("Attack");
+            player.GetComponent<player>().StartDamageCooldown();
+            player.GetComponent<PlayerHealth>().health -= 10;
+            yield return new WaitForSeconds(0.7f);
+            currentSpeed = -speed;
+            Invoke("Reposition", timer);
+
+        }
+        if (id == 1)
+        {
+            canAttack = false;
+            animator.SetTrigger("Attack");
+            player.GetComponent<player>().StartDamageCooldown();
+            player.GetComponent<PlayerHealth>().health -= 8;
+            yield return new WaitForSeconds(0.5f);
+            player.GetComponent<player>().StartDamageCooldown();
+            player.GetComponent<PlayerHealth>().health -= 8;
+            yield return new WaitForSeconds(0.5f);
+            currentSpeed = -speed;
+            Invoke("Reposition", timer);
+
+        }
+    }
+    public void StartAttackOrder()
+    {
+        StartCoroutine(attack_loop());
     }
     private void Restart()
     {
         repositioning = false;
+        canAttack = true;
         currentSpeed = speed;
     }
 }

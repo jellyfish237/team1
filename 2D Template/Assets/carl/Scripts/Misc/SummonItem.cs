@@ -28,7 +28,6 @@ public class SummonItem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && isItemActive == false && mirrorTime != 0.0f)
         {
-            player.GetComponent<player>().cam.GetComponent<camera_shake>().StartCoroutine1();
             StopAllCoroutines();
             isItemActive = true;
             Summon(mirror);
