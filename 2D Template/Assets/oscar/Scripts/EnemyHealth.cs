@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public float health = 100;
     public float maxHP = 100;
-    public float minHP = 50;
+    //public float minHP = 50;
     
     //make ghost take damage only when being chased
     [HideInInspector] public bool isInLight;
@@ -17,13 +17,20 @@ public class EnemyHealth : MonoBehaviour
     private Animator animator;
     public float timer;
     private Rigidbody2D RB;
+    bool ghostDead = false;
+    
+
+    [SerializeField] FloatingHealthBar healthbar;
     
 
     void Start()
     {
-        health = Random.Range(minHP, maxHP);
+        health = maxHP;
+        //health = Random.Range(minHP, maxHP);
         animator = GetComponent<Animator>();
         RB = GetComponent<Rigidbody2D>();
+        healthbar = GetComponentInChildren<FloatingHealthBar>();
+        healthbar.UpdateHealthBar(health, maxHP);
     }
     void Update()
     {
@@ -32,6 +39,7 @@ public class EnemyHealth : MonoBehaviour
         {
             takingDamage = true;
             health -= Time.deltaTime * currentMirror.damageSpeed;
+            healthbar.UpdateHealthBar(health, maxHP);
         }
         else
         {
@@ -39,9 +47,14 @@ public class EnemyHealth : MonoBehaviour
         }
         if (health <= 0)
         {
+            ghostDead = true;
             RB.velocity = Vector2.zero;
             animator.SetTrigger("Dead");
             Invoke("ghostAnimation", timer);
+        }
+        if (ghostDead == true)
+        {
+            //hello
         }
     }
     private void ghostAnimation()
