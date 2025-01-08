@@ -11,10 +11,15 @@ public class UI : MonoBehaviour
     public UnityEngine.UI.Slider health_bar;
     public UnityEngine.UI.Slider mirror_bar;
     public GameObject fill;
+    public GameObject player;
+    public GameObject key_ghost;
+
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-
+        key_ghost = GameObject.FindGameObjectWithTag("key_ghost");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -26,5 +31,8 @@ public class UI : MonoBehaviour
         }
         health_bar.value = player_HP.GetComponent<PlayerHealth>().health / 100;
         mirror_bar.value = summonitem.GetComponent<SummonItem>().mirrorTime / 5;
+
+        Debug.Log(animator.GetFloat("distance"));
+        animator.SetFloat("distance", Vector2.Distance(player.transform.position, key_ghost.transform.position));
     }
 }
