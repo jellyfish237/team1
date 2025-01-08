@@ -589,8 +589,9 @@ GameObject:
   - component: {fileID: 7517694959377231476}
   - component: {fileID: 8229412963569954046}
   - component: {fileID: 8805897260830411483}
+  - component: {fileID: 4598589304827085365}
   m_Layer: 0
-  m_Name: Image (1)
+  m_Name: candle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -654,6 +655,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &4598589304827085365
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3192552364590916841}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f6f459f204a05854e9b66674b06292a6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3370961926582854957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,6 +1431,7 @@ MonoBehaviour:
   health_bar: {fileID: 4361866345483643553}
   mirror_bar: {fileID: 6208597200507568710}
   fill: {fileID: 5681018467250715761}
+  animator: {fileID: 4598589304827085365}
 --- !u!1 &5867622808130647217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1596,7 +1618,7 @@ GameObject:
   - component: {fileID: 3307887494926833672}
   - component: {fileID: 5292110478426748594}
   m_Layer: 0
-  m_Name: Image (2)
+  m_Name: key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

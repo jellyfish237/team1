@@ -248,6 +248,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c29e28e5e13c9d945883329152ecccbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1275216199 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5436851495128042579, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
+  m_PrefabInstance: {fileID: 1800608185}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1275216203
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275216199}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f6f459f204a05854e9b66674b06292a6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1302974875 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1764911980354554685, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
@@ -370,6 +395,10 @@ PrefabInstance:
       propertyPath: volumeLayer.m_Bits
       value: 128
       objectReference: {fileID: 0}
+    - target: {fileID: 4918976249419966475, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1275216203}
     - target: {fileID: 4918976249419966475, guid: dd59db9ff24db8d479d66d77246db63d, type: 3}
       propertyPath: summonitem
       value: 
