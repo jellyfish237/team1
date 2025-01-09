@@ -15,6 +15,14 @@ public class player : MonoBehaviour
     public float i_frames = 0f;
     public Camera cam;
     [HideInInspector] public Vector2 currentDi;
+    private SpriteRenderer spri;
+    private Animator ani;
+
+    private void Start()
+    {
+        ani = GetComponent<Animator>();
+        spri = GetComponent<SpriteRenderer>();
+    }
 
     // Update is called once per frame
     void Update()
