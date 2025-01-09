@@ -162,7 +162,7 @@ public class EnemyMovement : MonoBehaviour
         {
             canAttack = false;
             animator.SetTrigger("Attack");
-            if (distance >= 2.0)
+            if (distance <= 1.5 || distance == 0.0)
             {
                 player.GetComponent<player>().StartDamageCooldown();
                 player.GetComponent<PlayerHealth>().health -= 10;
@@ -177,14 +177,14 @@ public class EnemyMovement : MonoBehaviour
             canAttack = false;
             animator.SetTrigger("Attack");
             Debug.Log(distance);
-            if (distance <= 2.0)
+            if (distance <= 1.5 || distance == 0.0)
             {
                 player.GetComponent<player>().StartDamageCooldown();
                 player.GetComponent<PlayerHealth>().health -= 8;
             }
             yield return new WaitForSeconds(0.5f);
             Debug.Log(distance);
-            if (distance <= 2.0)
+            if (distance <= 1.5 || distance == 0.0)
             {
                 player.GetComponent<player>().StartDamageCooldown();
                 player.GetComponent<PlayerHealth>().health -= 8;
