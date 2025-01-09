@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5579654040104439007}
   - component: {fileID: 5711052692776294148}
   - component: {fileID: 5111022655190436098}
+  - component: {fileID: 3363684499140225478}
   m_Layer: 8
   m_Name: player
   m_TagString: Player
@@ -286,6 +287,26 @@ MonoBehaviour:
   maxBurst: 1
   maxFlicker: 0.2
   leLight: {fileID: 5711052692776294148}
+--- !u!95 &3363684499140225478
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764911980354554685}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d8235fad3161a72408bb302552cabb71, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9171198329634130703
 GameObject:
   m_ObjectHideFlags: 0

@@ -4912,8 +4912,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a36ca298100a642a8a7f2f73ed2823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  health: 100
+  maxHP: 125
+=======
   health: 50
   maxHP: 60
+>>>>>>> 91c5b92fbc39da7d48a409f6bbbc10895d4fdf63
   isInLight: 0
   currentMirror: {fileID: 0}
   pushBack: 1
