@@ -388,14 +388,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a36ca298100a642a8a7f2f73ed2823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   health: 100
   maxHP: 65
+=======
+  health: 30
+  maxHP: 20
+>>>>>>> 91c5b92fbc39da7d48a409f6bbbc10895d4fdf63
   isInLight: 0
   currentMirror: {fileID: 0}
   pushBack: 1
   takingDamage: 0
   timer: 0.8
   healthbar: {fileID: 0}
+  AnimationClip: {fileID: 7400000, guid: dc4835011bb65cf4bb010fad1e88cfb8, type: 2}
 --- !u!114 &5933708237753589267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +425,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 315
   id: 0
+  seen_player: 0
+  distance: 0
   hasLineOfSight: 0
 --- !u!212 &3795640538350032957
 SpriteRenderer:
@@ -502,7 +510,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8217323732257228627}
   - component: {fileID: 7182206671179554191}
-  - component: {fileID: 6622840922272735391}
   m_Layer: 5
   m_Name: Healthbar
   m_TagString: Untagged
@@ -583,16 +590,3 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6622840922272735391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6710919122067750558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df0264d806e697242b6b067625499233, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 7182206671179554191}

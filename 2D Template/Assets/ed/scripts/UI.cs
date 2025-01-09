@@ -32,7 +32,6 @@ public class UI : MonoBehaviour
         health_bar.value = player_HP.GetComponent<PlayerHealth>().health / 100;
         mirror_bar.value = summonitem.GetComponent<SummonItem>().mirrorTime / 5;
 
-        Debug.Log(animator.GetFloat("distance"));
         animator.SetFloat("distance", Vector2.Distance(player.transform.position, key_ghost.transform.position));
     }
 }

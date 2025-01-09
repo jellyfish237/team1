@@ -9,7 +9,8 @@ public class flicker : MonoBehaviour
     public float maxBurst = 1f;
     public float maxFlicker = 0.2f;
 
-    float defaultInten = 1;
+    float defaultInten;
+    float defaultRadius;
     bool Flicker;
     float timer;
     float interval;
@@ -17,11 +18,18 @@ public class flicker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //defaultInten = GetComponent<Light2D>().intensity;
-        interval = Random.Range(0,maxInterval);
+        defaultInten = GetComponent<Light2D>().intensity;
+        defaultRadius = GetComponent<Light2D>().pointLightOuterRadius;
+        var myName = this.name;
+        if (myName != "player" && myName != "N_teleport" && myName != "W_teleport" && myName != "S_teleport" && myName != "E_teleport" && myName != "UP")
+        {
+            int rng = Random.Range(0,2);
+            if (rng == 1)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (!Flicker)
@@ -31,7 +39,7 @@ public class flicker : MonoBehaviour
 
         if (timer > interval)
         {
-            interval = Random.Range(0, maxInterval);
+            interval = Random.Range(1, maxInterval);
             timer = 0;
             StartCoroutine(FlickerLight(Random.Range(0,maxBurst)));
         }
@@ -51,14 +59,14 @@ public class flicker : MonoBehaviour
 
             if (flickerTimer > flickerInterval)
             {
-                leLight.intensity = Mathf.Lerp(GetComponent<Light2D>().intensity, Random.Range(0.5f, defaultInten), Random.Range(0.5f, 0.8f));
+                leLight.pointLightOuterRadius = Mathf.Lerp(GetComponent<Light2D>().pointLightOuterRadius, Random.Range(defaultRadius * 0.8f, defaultRadius * 1.2f), Random.Range(0.5f, 0.8f));
+                leLight.intensity = Mathf.Lerp(GetComponent<Light2D>().intensity, Random.Range(defaultInten * 0.8f, defaultInten * 1.2f), Random.Range(0.5f, 0.8f));
                 flickerInterval = Random.Range(0, maxFlicker);
-                flickerTimer = 0;
             }
             yield return null;
         }
-
-        leLight.intensity = Mathf.Lerp(GetComponent<Light2D>().intensity, Random.Range(0.5f, defaultInten), Random.Range(0.5f, 0.8f));
+        leLight.pointLightOuterRadius = Mathf.Lerp(GetComponent<Light2D>().pointLightOuterRadius, Random.Range(defaultRadius * 0.8f, defaultRadius * 1.2f), Random.Range(0.5f, 0.8f));
+        leLight.intensity = Mathf.Lerp(GetComponent<Light2D>().intensity, Random.Range(defaultInten * 0.8f, defaultInten * 1.2f), Random.Range(0.5f, 0.8f));
         Flicker = false;
     }
 }

@@ -13,12 +13,11 @@ public class camera_shake : MonoBehaviour
         Vector3 orginalPos = transform.localPosition;
         float time = 0.0f;
 
-        while (time < 0.5f)
+        while (time < 0.3f)
         {
             float x = Random.Range(-0.1f, 0.1f);
             float y = Random.Range(-0.1f, 0.1f);
-            float z = Random.Range(-12f, -14f);
-            transform.localPosition = new Vector3(x, y, z);
+            transform.localPosition = new Vector3(x, y, -13);
 
             time += Time.deltaTime;
 
