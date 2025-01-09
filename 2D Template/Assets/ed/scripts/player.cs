@@ -33,6 +33,8 @@ public class player : MonoBehaviour
             moveInput.y = Input.GetAxisRaw("Vertical");
             moveInput.Normalize();
             rb2d.velocity = moveInput * speed;
+            ani.SetFloat("Velocityx", rb2d.velocity.x);
+            ani.SetFloat("Velocityy", rb2d.velocity.y);
         }
         if (moveInput != Vector2.zero)
         {
