@@ -139,7 +139,6 @@ public class EnemyMovement : MonoBehaviour
     }
     public IEnumerator stun()
     {
-        currentSpeed = 0;
         Vector3 orginalPos = transform.localPosition;
         float time = 0.0f;
 

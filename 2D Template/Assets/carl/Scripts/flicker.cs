@@ -21,7 +21,7 @@ public class flicker : MonoBehaviour
         defaultInten = GetComponent<Light2D>().intensity;
         defaultRadius = GetComponent<Light2D>().pointLightOuterRadius;
         var myName = this.name;
-        if (myName != "player" && myName != "N_teleport" && myName != "W_teleport" && myName != "S_teleport" && myName != "E_teleport" && myName != "UP")
+        if (myName != "player" && myName != "N_teleport" && myName != "W_teleport" && myName != "S_teleport" && myName != "E_teleport" && myName != "UP" && myName != "Mirror" && myName != "StrongMirror" && myName != "Banana")
         {
             int rng = Random.Range(0,2);
             if (rng == 1)
