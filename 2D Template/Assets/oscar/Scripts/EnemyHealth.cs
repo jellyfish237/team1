@@ -8,7 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public float health = 100;
     public float maxHP = 100;
     //public float minHP = 50;
-    
+
     //make ghost take damage only when being chased
     [HideInInspector] public bool isInLight;
     [HideInInspector] public MirrorDamage currentMirror;
@@ -18,10 +18,11 @@ public class EnemyHealth : MonoBehaviour
     public float timer;
     private Rigidbody2D RB;
     bool ghostDead = false;
-    
+
 
     [SerializeField] FloatingHealthBar healthbar;
-    
+    public AnimationClip AnimationClip;
+
 
     void Start()
     {
@@ -30,36 +31,33 @@ public class EnemyHealth : MonoBehaviour
         animator = GetComponent<Animator>();
         RB = GetComponent<Rigidbody2D>();
         healthbar = GetComponentInChildren<FloatingHealthBar>();
-        healthbar.UpdateHealthBar(health, maxHP);
+        //healthbar.UpdateHealthBar(health, maxHP);
     }
     void Update()
     {
-        
+
         if (isInLight && GetComponent<EnemyMovement>().hasLineOfSight == true)
         {
             takingDamage = true;
             health -= Time.deltaTime * currentMirror.damageSpeed;
             healthbar.UpdateHealthBar(health, maxHP);
         }
-        else
+        if (!isInLight && takingDamage)
         {
             takingDamage = false;
+            GetComponent<EnemyMovement>().StartStunCooldown();
         }
-        if (health <= 0)
+        if (ghostDead == false && health <= 0)
         {
             ghostDead = true;
             RB.velocity = Vector2.zero;
             animator.SetTrigger("Dead");
-            Invoke("ghostAnimation", timer);
-        }
-        if (ghostDead == true)
-        {
-            //hello
+            StartCoroutine(die());
         }
     }
-    private void ghostAnimation()
+    IEnumerator die()
     {
+        yield return new WaitForSecondsRealtime(AnimationClip.length);
         Destroy(gameObject);
     }
-   
 }

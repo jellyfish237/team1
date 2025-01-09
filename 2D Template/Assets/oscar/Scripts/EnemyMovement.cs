@@ -23,7 +23,9 @@ public class EnemyMovement : MonoBehaviour
     private bool repositioning;
     private Vector3 new_position;
     private int rng;
-    public int id;
+    public int id; //0: normal, 1:red 
+    public bool seen_player; //stuns the ghosts at first so you dont get jumped instantly
+    public float distance; //prevent ghosts from being able to hurt the player from far away
 
     [HideInInspector] public bool hasLineOfSight = false;
     
@@ -44,7 +46,6 @@ public class EnemyMovement : MonoBehaviour
     {
         if (GetComponent<EnemyHealth>().health <= 0)
         {
-            
             currentSpeed = 0;
         }
         if (GetComponent<EnemyHealth>().takingDamage == true)
@@ -67,21 +68,21 @@ public class EnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Raycast distance
         RaycastHit2D ray = Physics2D.Raycast(transform.position, player.transform.position - transform.position, 1000, castLayer);
         if (ray.collider != null)
         {
             hasLineOfSight = ray.collider.CompareTag("Player");
-            
-            if (hasLineOfSight)
+
+            if (!seen_player && hasLineOfSight)
             {
-                Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
+                seen_player = true;
+                StartStunCooldown();
             }
-            else
+
+            if (!hasLineOfSight)
             {
-                Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
+                seen_player = false;
             }
-                
             if (ray.distance <= 1.0 && hasLineOfSight && canAttack == true)
             {
                 StartAttackOrder();
@@ -90,6 +91,7 @@ public class EnemyMovement : MonoBehaviour
             {
                 StopAllCoroutines();
             }
+            distance = ray.distance;
         }
     }
 
@@ -131,15 +133,40 @@ public class EnemyMovement : MonoBehaviour
         }
         StartWanderCooldown();
     }
-    
+    public void StartStunCooldown()
+    {
+        StartCoroutine(stun());
+    }
+    public IEnumerator stun()
+    {
+        currentSpeed = 0;
+        Vector3 orginalPos = transform.localPosition;
+        float time = 0.0f;
+
+        while (time < 0.8f)
+        {
+            float x = Random.Range(-0.1f, 0.1f);
+            float y = Random.Range(-0.1f, 0.1f);
+            transform.localPosition = new Vector3(orginalPos.x + x, orginalPos.y + y, 0);
+
+            time += Time.deltaTime;
+
+            yield return null;
+        }
+        transform.localPosition = orginalPos;
+    }
+
     public IEnumerator attack_loop()
     {
         if (id == 0)
         {
             canAttack = false;
             animator.SetTrigger("Attack");
-            player.GetComponent<player>().StartDamageCooldown();
-            player.GetComponent<PlayerHealth>().health -= 10;
+            if (distance >= 2.0)
+            {
+                player.GetComponent<player>().StartDamageCooldown();
+                player.GetComponent<PlayerHealth>().health -= 10;
+            }
             yield return new WaitForSeconds(0.7f);
             currentSpeed = -speed;
             Invoke("Reposition", timer);
@@ -149,11 +176,19 @@ public class EnemyMovement : MonoBehaviour
         {
             canAttack = false;
             animator.SetTrigger("Attack");
-            player.GetComponent<player>().StartDamageCooldown();
-            player.GetComponent<PlayerHealth>().health -= 8;
+            Debug.Log(distance);
+            if (distance <= 2.0)
+            {
+                player.GetComponent<player>().StartDamageCooldown();
+                player.GetComponent<PlayerHealth>().health -= 8;
+            }
             yield return new WaitForSeconds(0.5f);
-            player.GetComponent<player>().StartDamageCooldown();
-            player.GetComponent<PlayerHealth>().health -= 8;
+            Debug.Log(distance);
+            if (distance <= 2.0)
+            {
+                player.GetComponent<player>().StartDamageCooldown();
+                player.GetComponent<PlayerHealth>().health -= 8;
+            }
             yield return new WaitForSeconds(0.5f);
             currentSpeed = -speed;
             Invoke("Reposition", timer);
