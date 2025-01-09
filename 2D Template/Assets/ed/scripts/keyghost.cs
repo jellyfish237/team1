@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class keyghost : MonoBehaviour
 {
-    public CircleCollider2D emf5;
-    public CircleCollider2D emf4;
-    public CircleCollider2D emf3;
     public EnemyHealth enemy_hp;
 
     void Update()

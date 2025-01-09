@@ -2409,7 +2409,7 @@ ParticleSystem:
       m_Bits: 4294967295
     influenceList: []
   ClampVelocityModule:
-    enabled: 1
+    enabled: 0
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -2626,7 +2626,7 @@ ParticleSystem:
     inWorldSpace: 0
     multiplyDragByParticleSize: 1
     multiplyDragByParticleVelocity: 1
-    dampen: 0.27
+    dampen: 0
     drag:
       serializedVersion: 2
       minMaxState: 0
@@ -4829,12 +4829,10 @@ GameObject:
   - component: {fileID: 1524030426469262137}
   - component: {fileID: 5933708237753589267}
   - component: {fileID: 3795640538350032957}
-  - component: {fileID: 8076080448615273518}
-  - component: {fileID: 351831960934421599}
   - component: {fileID: 7151730873217699326}
-  - component: {fileID: 1420925193431560097}
-  - component: {fileID: 5649539795346677848}
   - component: {fileID: 2946503158674686390}
+  - component: {fileID: 3335466850931142563}
+  - component: {fileID: 7185201284500861522}
   m_Layer: 6
   m_Name: KeyGhost
   m_TagString: key_ghost
@@ -4877,7 +4875,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -4920,12 +4918,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHP: 100
-  minHP: 50
   isInLight: 0
   currentMirror: {fileID: 0}
   pushBack: 1
   takingDamage: 0
   timer: 0.8
+  healthbar: {fileID: 0}
+  AnimationClip: {fileID: 0}
 --- !u!114 &5933708237753589267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4949,6 +4948,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 51
   id: 0
+  seen_player: 0
+  distance: 0
   hasLineOfSight: 0
 --- !u!212 &3795640538350032957
 SpriteRenderer:
@@ -4991,53 +4992,17 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1156522212, guid: 6ff5f83f4bd5cf94db77a1dbd134e9c3, type: 3}
-  m_Color: {r: 0.6084906, g: 1, b: 0.7405093, a: 0.6}
+  m_Sprite: {fileID: 62286642, guid: 86a794bbcd2fb584998577df8f80a90e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &8076080448615273518
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3476825433024833807}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e8c84982a01ba6349a01b3b1191e0793, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!58 &351831960934421599
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3476825433024833807}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 5
 --- !u!114 &7151730873217699326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5050,42 +5015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37ded554fa2a0884f87346b069b97c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emf5: {fileID: 0}
-  emf4: {fileID: 0}
-  emf3: {fileID: 0}
   enemy_hp: {fileID: 1524030426469262137}
---- !u!58 &1420925193431560097
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3476825433024833807}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 10
---- !u!58 &5649539795346677848
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3476825433024833807}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 15
 --- !u!114 &2946503158674686390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5165,6 +5095,35 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!58 &3335466850931142563
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476825433024833807}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 20
+--- !u!114 &7185201284500861522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476825433024833807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b7c1f473641f2409049e48e19ac91e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circleCollider2D: {fileID: 0}
 --- !u!1 &4981402248104386235
 GameObject:
   m_ObjectHideFlags: 0
@@ -5334,7 +5293,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: -20
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5767,7 +5726,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 0
-    maxNumParticles: 1000
+    maxNumParticles: 600
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -5827,7 +5786,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 0
+    type: 10
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -5914,7 +5873,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 40
+      value: 70
       mode: 0
       spread: 0
       speed:
@@ -6033,7 +5992,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 400
+      scalar: 50
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -7791,7 +7750,7 @@ ParticleSystem:
     inWorldSpace: 0
     multiplyDragByParticleSize: 1
     multiplyDragByParticleVelocity: 1
-    dampen: 0.27
+    dampen: 0
     drag:
       serializedVersion: 2
       minMaxState: 0
@@ -7846,11 +7805,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   NoiseModule:
-    enabled: 1
+    enabled: 0
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3.84
+      scalar: 3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
