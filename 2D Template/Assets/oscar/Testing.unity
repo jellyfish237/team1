@@ -5758,7 +5758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7182206671179554191, guid: 72b654ed7405187429ea29579e59272a, type: 3}
       propertyPath: m_Value
-      value: 0.621
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7544601378684472968, guid: 72b654ed7405187429ea29579e59272a, type: 3}
       propertyPath: m_Controller

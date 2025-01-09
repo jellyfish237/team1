@@ -4913,7 +4913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  maxHP: 150
+  maxHP: 125
   isInLight: 0
   currentMirror: {fileID: 0}
   pushBack: 1

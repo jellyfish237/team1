@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  maxHP: 50
+  maxHP: 65
   isInLight: 0
   currentMirror: {fileID: 0}
   pushBack: 1
