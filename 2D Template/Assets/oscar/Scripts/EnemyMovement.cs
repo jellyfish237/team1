@@ -47,6 +47,7 @@ public class EnemyMovement : MonoBehaviour
         if (GetComponent<EnemyHealth>().health <= 0)
         {
             currentSpeed = 0;
+            canAttack = false;
         }
         if (GetComponent<EnemyHealth>().takingDamage == true)
         {
@@ -161,11 +162,7 @@ public class EnemyMovement : MonoBehaviour
         {
             canAttack = false;
             animator.SetTrigger("Attack");
-            if (distance <= 1.5 || distance == 0.0)
-            {
-                player.GetComponent<player>().StartDamageCooldown();
-                player.GetComponent<PlayerHealth>().health -= 10;
-            }
+            damage_player(10);
             yield return new WaitForSeconds(0.7f);
             currentSpeed = -speed;
             Invoke("Reposition", timer);
@@ -176,22 +173,23 @@ public class EnemyMovement : MonoBehaviour
             canAttack = false;
             animator.SetTrigger("Attack");
             Debug.Log(distance);
-            if (distance <= 1.5 || distance == 0.0)
-            {
-                player.GetComponent<player>().StartDamageCooldown();
-                player.GetComponent<PlayerHealth>().health -= 8;
-            }
+            damage_player(8);
             yield return new WaitForSeconds(0.5f);
             Debug.Log(distance);
-            if (distance <= 1.5 || distance == 0.0)
-            {
-                player.GetComponent<player>().StartDamageCooldown();
-                player.GetComponent<PlayerHealth>().health -= 8;
-            }
+            damage_player(8);
             yield return new WaitForSeconds(0.5f);
             currentSpeed = -speed;
             Invoke("Reposition", timer);
 
+        }
+    }
+
+    public void damage_player(int damage)
+    {
+        if (distance <= 1.5 || distance == 0.0 && canAttack)
+        {
+            player.GetComponent<player>().StartDamageCooldown();
+            player.GetComponent<PlayerHealth>().health -= damage;
         }
     }
     public void StartAttackOrder()

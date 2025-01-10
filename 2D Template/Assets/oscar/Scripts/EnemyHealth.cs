@@ -51,6 +51,7 @@ public class EnemyHealth : MonoBehaviour
         {
             ghostDead = true;
             RB.velocity = Vector2.zero;
+            animator.StopPlayback();
             animator.SetTrigger("Dead");
             StartCoroutine(die());
         }
