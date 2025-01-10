@@ -5787,6 +5787,14 @@ PrefabInstance:
       propertyPath: minSpeed
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4748875697960892501, guid: a3336126944c4b64da27fd47aa0759ff, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748875697960892501, guid: a3336126944c4b64da27fd47aa0759ff, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6234271153853851945, guid: a3336126944c4b64da27fd47aa0759ff, type: 3}
       propertyPath: m_Name
       value: Red Ghost

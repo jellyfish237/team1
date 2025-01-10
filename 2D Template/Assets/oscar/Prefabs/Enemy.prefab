@@ -300,12 +300,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3476825433024833803}
-  - component: {fileID: 3476825433024833847}
   - component: {fileID: 3476825433024833846}
   - component: {fileID: 1524030426469262137}
   - component: {fileID: 5933708237753589267}
   - component: {fileID: 3795640538350032957}
   - component: {fileID: 8076080448615273518}
+  - component: {fileID: 138840291877326800}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: ghost
@@ -329,32 +329,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &3476825433024833847
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3476825433024833807}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.019629389, y: -0.03170894}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.5500346, y: 0.7674676}
-  m_EdgeRadius: 0
 --- !u!50 &3476825433024833846
 Rigidbody2D:
   serializedVersion: 4
@@ -396,6 +370,7 @@ MonoBehaviour:
   takingDamage: 0
   timer: 0.8
   healthbar: {fileID: 0}
+  AnimationClip: {fileID: 7400000, guid: 9fe1c03f61475a0428c1ca5b0f05f7fc, type: 2}
 --- !u!114 &5933708237753589267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +394,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 315
   id: 0
+  seen_player: 0
+  distance: 0
   hasLineOfSight: 0
 --- !u!212 &3795640538350032957
 SpriteRenderer:
@@ -492,6 +469,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &138840291877326800
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476825433024833807}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.4
 --- !u!1 &6710919122067750558
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,7 +495,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8217323732257228627}
   - component: {fileID: 7182206671179554191}
-  - component: {fileID: 6622840922272735391}
   m_Layer: 5
   m_Name: Healthbar
   m_TagString: Untagged
@@ -583,16 +575,3 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6622840922272735391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6710919122067750558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df0264d806e697242b6b067625499233, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 7182206671179554191}

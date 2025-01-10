@@ -44,6 +44,14 @@ public class player : MonoBehaviour
         {
             rb2d.velocity = Vector2.zero;
         }
+        if (Input.GetKeyDown(KeyCode.LeftShift) == true)
+        {
+            speed = 6f;
+        }
+        else
+        {
+            speed = 3.5f;
+        }
     }
 
     public void StartTeleportCooldown()
