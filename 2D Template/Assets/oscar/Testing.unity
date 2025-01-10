@@ -5630,11 +5630,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2215487501275689013, guid: 72b654ed7405187429ea29579e59272a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2215487501275689013, guid: 72b654ed7405187429ea29579e59272a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2667266948923360503, guid: 72b654ed7405187429ea29579e59272a, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5710,7 +5710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3476825433024833807, guid: 72b654ed7405187429ea29579e59272a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3476825433024833807, guid: 72b654ed7405187429ea29579e59272a, type: 3}
       propertyPath: m_TagString
@@ -5787,13 +5787,21 @@ PrefabInstance:
       propertyPath: minSpeed
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4748875697960892501, guid: a3336126944c4b64da27fd47aa0759ff, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748875697960892501, guid: a3336126944c4b64da27fd47aa0759ff, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6234271153853851945, guid: a3336126944c4b64da27fd47aa0759ff, type: 3}
       propertyPath: m_Name
       value: Red Ghost
       objectReference: {fileID: 0}
     - target: {fileID: 6234271153853851945, guid: a3336126944c4b64da27fd47aa0759ff, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6234271153853851949, guid: a3336126944c4b64da27fd47aa0759ff, type: 3}
       propertyPath: m_RootOrder
