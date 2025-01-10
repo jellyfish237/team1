@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 523069406732456945}
   - component: {fileID: -7140220637387226598}
   m_Layer: 2
-  m_Name: Light Test
+  m_Name: Mirror
   m_TagString: MirrorLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655461479858228080}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 651bac35720d3814c866346bc7659258, type: 3}
   m_Name: 

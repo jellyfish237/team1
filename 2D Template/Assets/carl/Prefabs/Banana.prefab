@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2139073953893392019}
   - component: {fileID: 2139073953893392018}
   m_Layer: 2
-  m_Name: bananalaser
+  m_Name: Banana
   m_TagString: MirrorLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
