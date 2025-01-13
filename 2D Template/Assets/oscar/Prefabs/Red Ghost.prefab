@@ -5211,6 +5211,7 @@ GameObject:
   - component: {fileID: 5938115060373936155}
   - component: {fileID: 1644023574536754184}
   - component: {fileID: 6915309081056714480}
+  - component: {fileID: 1518326802346819754}
   m_Layer: 6
   m_Name: Red Ghost
   m_TagString: ghost
@@ -5268,8 +5269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a36ca298100a642a8a7f2f73ed2823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
-  maxHP: 60
+  health: 30
+  maxHP: 40
   isInLight: 0
   currentMirror: {fileID: 0}
   pushBack: 1
@@ -5391,3 +5392,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
+--- !u!58 &1518326802346819754
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6234271153853851945}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1

@@ -28,10 +28,10 @@ public class EnemyMovement : MonoBehaviour
     public float distance; //prevent ghosts from being able to hurt the player from far away
 
     [HideInInspector] public bool hasLineOfSight = false;
-    
+
 
     // Start is called before the first frame update
-    void Start() 
+    void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         currentSpeed = Random.Range(minSpeed, maxSpeed);
@@ -104,7 +104,7 @@ public class EnemyMovement : MonoBehaviour
         if (rng == 0)
         {
             new_position.x = transform.position.x + Random.Range(-6, -8);
-        }  
+        }
         if (rng == 1)
         {
             new_position.x = transform.position.x + Random.Range(6, 8);
@@ -201,5 +201,11 @@ public class EnemyMovement : MonoBehaviour
         repositioning = false;
         canAttack = true;
         currentSpeed = speed;
+    }
+
+    public void HijackMovement()
+    {
+        canAttack = false;
+        Invoke("Reposition", timer);
     }
 }

@@ -306,6 +306,7 @@ GameObject:
   - component: {fileID: 3795640538350032957}
   - component: {fileID: 8076080448615273518}
   - component: {fileID: 138840291877326800}
+  - component: {fileID: 3378709326584529341}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: ghost
@@ -362,8 +363,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a36ca298100a642a8a7f2f73ed2823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maxHP: 65
+  health: 10
+  maxHP: 20
   isInLight: 0
   currentMirror: {fileID: 0}
   pushBack: 1
@@ -485,6 +486,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
+--- !u!58 &3378709326584529341
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476825433024833807}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!1 &6710919122067750558
 GameObject:
   m_ObjectHideFlags: 0

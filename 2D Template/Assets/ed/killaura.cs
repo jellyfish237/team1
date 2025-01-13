@@ -6,11 +6,15 @@ using UnityEngine;
 public class killaura : MonoBehaviour
 {
     public CircleCollider2D circleCollider2D;
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("ghost"))
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
+            if (GetComponentInParent<keyghost>().attacking_player == false)
+            {
+                GetComponentInParent<keyghost>().StartSummonCooldown();
+            }
         }
     }
 }
