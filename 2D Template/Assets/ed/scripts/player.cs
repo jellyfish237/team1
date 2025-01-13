@@ -39,6 +39,8 @@ public class player : MonoBehaviour
         if (moveInput != Vector2.zero)
         {
             currentDi = moveInput;
+            ani.SetFloat("Directionx", moveInput.x);
+            ani.SetFloat("Directiony", moveInput .y);
         }
         if (can_move == false)
         {

@@ -14,6 +14,8 @@ public class SummonItem : MonoBehaviour
     public float activeTimer = 5.0f;
     public float mirrorTime = 5.0f;
     IEnumerator co;
+    private SpriteRenderer spri;
+    private Animator ani;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,8 @@ public class SummonItem : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         isItemActive = false;
         canUseItem = true;
+        ani = GetComponent<Animator>();
+        spri = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -31,16 +35,23 @@ public class SummonItem : MonoBehaviour
             StopAllCoroutines();
             isItemActive = true;
             Summon(mirror);
+            ani.SetBool("Mirror", true);
         }
         else if (Input.GetMouseButtonUp(0))
         {
             Delete();
+            ani.SetBool("Mirror", false);
         }
 
         if (current_item)
         {
             current_item.transform.position = itempos.position;
             current_item.transform.up = GetComponent<player>().currentDi;
+            Vector2 mousePos = Input.mousePosition;
+            var mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 Difference = mouseWorldPos - transform.position;
+            ani.SetFloat("Posx", mouseWorldPos.x);
+            ani.SetFloat("Posy", mouseWorldPos.y);
         }
 
         if (isItemActive == true && mirrorTime >= 0.0f)
