@@ -9,6 +9,7 @@ public class keyghost : MonoBehaviour
     public EnemyHealth enemy_hp;
     public GameObject ghost_summon_attack;
     public bool attacking_player = false;
+    public int ghosts_nearby = 0;
 
     private void Start()
     {
@@ -21,16 +22,20 @@ public class keyghost : MonoBehaviour
             Debug.Log("spawned a key");
         }
     }
-    public void StartSummonCooldown()
+    public void StartAttacking()
     {
+        if (attacking_player)
+        {
+            return;
+        }
         attacking_player = true;
         StartCoroutine(summon_loop());
     }
     public IEnumerator summon_loop()
     {
-        Debug.Log("spawned more ghosts");
         GameObject summon_attack = Instantiate(ghost_summon_attack, new Vector3(player.transform.position.x, player.transform.position.y, 0), player.transform.rotation);
-        yield return new WaitForSeconds(20.0f);
+        summon_attack.GetComponent<spawn_ghost_attack>().key_ghost = gameObject;
+        yield return new WaitForSeconds(1.0f);
         StartCoroutine(summon_loop());
     }
 }
