@@ -35,23 +35,24 @@ public class SummonItem : MonoBehaviour
             StopAllCoroutines();
             isItemActive = true;
             Summon(mirror);
-            ani.SetBool("Mirror", true);
-        }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            Delete();
-            ani.SetBool("Mirror", false);
-        }
-
-        if (current_item)
-        {
-            current_item.transform.position = itempos.position;
-            current_item.transform.up = GetComponent<player>().currentDi;
             Vector2 mousePos = Input.mousePosition;
             var mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3 Difference = mouseWorldPos - transform.position;
             ani.SetFloat("Posx", mouseWorldPos.x);
             ani.SetFloat("Posy", mouseWorldPos.y);
+
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            Delete();
+        }
+
+        ani.SetBool("Mirror", current_item);
+
+        if (current_item)
+        {
+            current_item.transform.position = itempos.position;
+            current_item.transform.up = GetComponent<player>().currentDi;
         }
 
         if (isItemActive == true && mirrorTime >= 0.0f)
