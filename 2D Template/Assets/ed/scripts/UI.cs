@@ -15,7 +15,6 @@ public class UI : MonoBehaviour
     public GameObject key_ghost;
 
     public Animator animator;
-    // Start is called before the first frame update
     void Start()
     {
         key_ghost = GameObject.FindGameObjectWithTag("key_ghost");
@@ -33,5 +32,10 @@ public class UI : MonoBehaviour
         mirror_bar.value = summonitem.GetComponent<SummonItem>().mirrorTime / 5;
 
         animator.SetFloat("distance", Vector2.Distance(player.transform.position, key_ghost.transform.position));
+
+        if (animator.GetFloat("distance") <= 25f)
+        {
+            key_ghost.GetComponent<keyghost>().StartAttacking();
+        }
     }
 }

@@ -84,11 +84,11 @@ public class EnemyMovement : MonoBehaviour
             {
                 seen_player = false;
             }
-            if (ray.distance <= 1.0 && hasLineOfSight && canAttack == true)
+            if (ray.distance <= 0.6 && hasLineOfSight && canAttack == true)
             {
                 StartAttackOrder();
             }
-            else if (ray.distance >= 1.0 && hasLineOfSight && canAttack == true)
+            else if (ray.distance >= 0.6 && hasLineOfSight && canAttack == true)
             {
                 StopAllCoroutines();
             }
@@ -172,10 +172,8 @@ public class EnemyMovement : MonoBehaviour
         {
             canAttack = false;
             animator.SetTrigger("Attack");
-            Debug.Log(distance);
             damage_player(8);
             yield return new WaitForSeconds(0.5f);
-            Debug.Log(distance);
             damage_player(8);
             yield return new WaitForSeconds(0.5f);
             currentSpeed = -speed;
@@ -186,7 +184,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void damage_player(int damage)
     {
-        if (distance <= 1.5 || distance == 0.0 && canAttack)
+        if (distance <= 1.0 || distance == 0.0 && canAttack)
         {
             player.GetComponent<player>().StartDamageCooldown();
             player.GetComponent<PlayerHealth>().health -= damage;
