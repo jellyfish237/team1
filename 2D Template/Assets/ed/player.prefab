@@ -44,7 +44,7 @@ Transform:
   - {fileID: 5298179186254537001}
   - {fileID: 2105143198998192651}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3766918274366639870
 MonoBehaviour:
@@ -64,7 +64,7 @@ MonoBehaviour:
   can_move: 1
   can_take_damage: 1
   i_frames: 0
-  cam: {fileID: 0}
+  cam: {fileID: 5529566792133908755}
   currentDi: {x: 0, y: 0}
 --- !u!114 &1797798299283198561
 MonoBehaviour:

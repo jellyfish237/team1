@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.6037736, g: 0.11107157, b: 0.11107157, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -370,7 +370,7 @@ MonoBehaviour:
   pushBack: 1
   takingDamage: 0
   timer: 0.8
-  particles: {fileID: 0}
+  particles: {fileID: 5529367584652904895}
   healthbar: {fileID: 0}
   AnimationClip: {fileID: 7400000, guid: 9fe1c03f61475a0428c1ca5b0f05f7fc, type: 2}
 --- !u!114 &5933708237753589267
@@ -497,7 +497,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8217323732257228627}
   - component: {fileID: 7182206671179554191}
-  - component: {fileID: 7755989678010660805}
+  - component: {fileID: 8864333070163986253}
   m_Layer: 5
   m_Name: Healthbar
   m_TagString: Untagged
@@ -578,7 +578,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7755989678010660805
+--- !u!114 &8864333070163986253
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -653,5 +653,10 @@ PrefabInstance:
 --- !u!4 &5529367584652904890 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6329067039787679908, guid: 32b03287aeb6ce94e80336f615d96ba8, type: 3}
+  m_PrefabInstance: {fileID: 1975143400007420190}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5529367584652904895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6329067039787679905, guid: 32b03287aeb6ce94e80336f615d96ba8, type: 3}
   m_PrefabInstance: {fileID: 1975143400007420190}
   m_PrefabAsset: {fileID: 0}

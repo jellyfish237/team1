@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class FloatingHealthBar : MonoBehaviour
+public class FloatingHealthbar : MonoBehaviour
 {
     [SerializeField] private Slider slider;
 
