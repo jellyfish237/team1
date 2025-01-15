@@ -28,7 +28,7 @@ public class Pausemenu : MonoBehaviour
     {
         Time.timeScale = 1;
         pausemenu.SetActive(false);
-        GetComponent<SummonItem>().canUseItem = false;
+        GetComponent<SummonItem>().canUseItem = true;
     }
 
     public void SecretButton()
