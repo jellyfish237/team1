@@ -86,18 +86,6 @@ public class SummonItem : MonoBehaviour
         Destroy(current_item);
         isItemActive = false;
         enable_player_move();
-        ItemCooldownStart();
-    }
-
-    public void ItemCooldownStart()
-    {
-        StartCoroutine(ItemCooldown());
-    }
-    public IEnumerator ItemCooldown()
-    {
-        canUseItem = false;
-        yield return new WaitForSeconds(2.0f);
-        canUseItem = true;
     }
 
     public void enable_player_move()
