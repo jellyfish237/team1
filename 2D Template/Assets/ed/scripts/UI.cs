@@ -38,4 +38,10 @@ public class UI : MonoBehaviour
             key_ghost.GetComponent<keyghost>().StartAttacking();
         }
     }
+
+    void hurt()
+    {
+        StartCoroutine(hurt_cor());
+    }
+
 }
