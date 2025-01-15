@@ -10,7 +10,7 @@ public class SummonItem : MonoBehaviour
     private GameObject player;
     public ItemClass current_item;
     private bool isItemActive = false;
-    private bool canUseItem = true;
+    [HideInInspector] public bool canUseItem = true;
     public float activeTimer = 5.0f;
     public float mirrorTime = 5.0f;
     IEnumerator co;
@@ -30,7 +30,7 @@ public class SummonItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && isItemActive == false && mirrorTime != 0.0f)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && isItemActive == false && canUseItem == true && mirrorTime != 0.0f)
         {
             StopAllCoroutines();
             isItemActive = true;

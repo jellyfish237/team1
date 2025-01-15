@@ -20,6 +20,7 @@ public class Pausemenu : MonoBehaviour
         {
             Time.timeScale = 0;
             pausemenu.SetActive(true);
+            GetComponent<SummonItem>().canUseItem = false;
         }
     }
 
@@ -27,6 +28,7 @@ public class Pausemenu : MonoBehaviour
     {
         Time.timeScale = 1;
         pausemenu.SetActive(false);
+        GetComponent<SummonItem>().canUseItem = false;
     }
 
     public void SecretButton()
