@@ -40,7 +40,7 @@ public class player : MonoBehaviour
         {
             currentDi = moveInput;
             ani.SetFloat("Directionx", moveInput.x);
-            ani.SetFloat("Directiony", moveInput .y);
+            ani.SetFloat("Directiony", moveInput.y);
         }
         if (can_move == false)
         {
@@ -77,5 +77,13 @@ public class player : MonoBehaviour
         can_take_damage = false;
         yield return new WaitForSeconds(i_frames);
         can_take_damage = true;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy_Attack"))
+        {
+            StartDamageCooldown();
+            GetComponent<PlayerHealth>().health -= 8;
+        }
     }
 }
