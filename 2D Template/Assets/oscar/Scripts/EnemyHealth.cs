@@ -19,6 +19,8 @@ public class EnemyHealth : MonoBehaviour
     private Rigidbody2D RB;
     bool ghostDead = false;
 
+    public GameObject particles;
+
 
     [SerializeField] FloatingHealthBar healthbar;
     public AnimationClip AnimationClip;
@@ -41,11 +43,13 @@ public class EnemyHealth : MonoBehaviour
             takingDamage = true;
             health -= Time.deltaTime * currentMirror.damageSpeed;
             healthbar.UpdateHealthBar(health, maxHP);
+            particles.SetActive(true);
         }
         if (!isInLight && takingDamage)
         {
             takingDamage = false;
             GetComponent<EnemyMovement>().StartStunCooldown();
+            particles.SetActive(false);
         }
         if (ghostDead == false && health <= 0)
         {
@@ -54,6 +58,10 @@ public class EnemyHealth : MonoBehaviour
             animator.StopPlayback();
             animator.SetTrigger("Dead");
             StartCoroutine(die());
+        }
+        if(ghostDead == true)
+        {
+
         }
     }
     IEnumerator die()
