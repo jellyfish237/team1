@@ -44,4 +44,8 @@ public class UI : MonoBehaviour
         StartCoroutine(hurt_cor());
     }
 
+    IEnumerator hurt_cor()
+    {
+        yield return null;
+    }
 }
