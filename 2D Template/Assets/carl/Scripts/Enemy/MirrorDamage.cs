@@ -9,7 +9,7 @@ public class MirrorDamage : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("ghost"))
+        if (other.gameObject.CompareTag("ghost") || other.gameObject.CompareTag("key_ghost"))
         {
             other.gameObject.GetComponent<EnemyHealth>().currentMirror = this;
             other.gameObject.GetComponent<EnemyHealth>().isInLight = true;
@@ -17,7 +17,7 @@ public class MirrorDamage : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("ghost"))
+        if (other.gameObject.CompareTag("ghost") || other.gameObject.CompareTag("key_ghost"))
         {
             other.gameObject.GetComponent<EnemyHealth>().isInLight = false;
             other.gameObject.GetComponent<EnemyHealth>().currentMirror = null;

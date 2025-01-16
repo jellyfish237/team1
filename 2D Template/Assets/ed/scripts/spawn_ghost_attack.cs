@@ -12,7 +12,7 @@ public class spawn_ghost_attack : MonoBehaviour
     public GameObject key_ghost;
     private int rng;
 
-    int max_ghosts = 4;
+    int max_ghosts = 2;
     void Start()
     {
         objects = GameObject.Find("objects");
