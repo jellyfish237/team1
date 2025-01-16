@@ -24,4 +24,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/carl/Credit Scene.unity
     guid: b5e0a89baab00b049a07540761cf6688
+  - enabled: 1
+    path: Assets/Zelda's folder/Zelda's Credits.unity
+    guid: 82e89180177dde741b28a5c0ba940a77
+  - enabled: 1
+    path: Assets/oscar/Charlotte.unity
+    guid: b5bc604a03e3d5c46820d9641cfdfd4d
   m_configObjects: {}
