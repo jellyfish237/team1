@@ -15,4 +15,22 @@ EditorBuildSettings:
     path: Assets/MAIN FOLDER (MAKE SURE ABSOLUTELY NOBODY ELSE IS EDITTING THIS FOLDER
       IF YOU WANT TO CHANGE THIS)/game.unity
     guid: 03129a10a2328384c89b5424d5ce4159
+  - enabled: 1
+    path: Assets/oscar/Credits.unity
+    guid: 21be6e00f11a44540ac5378b96ecf7b1
+  - enabled: 1
+    path: Assets/oscar/oscar credits.unity
+    guid: 123b26596dc4b97498dad8d7d41822cc
+  - enabled: 1
+    path: Assets/carl/Credit Scene.unity
+    guid: b5e0a89baab00b049a07540761cf6688
+  - enabled: 1
+    path: Assets/Zelda's folder/Zelda's Credits.unity
+    guid: 82e89180177dde741b28a5c0ba940a77
+  - enabled: 1
+    path: Assets/oscar/Charlotte.unity
+    guid: b5bc604a03e3d5c46820d9641cfdfd4d
+  - enabled: 1
+    path: Assets/oscar/Echo.unity
+    guid: ee4c252c3e08768459e34eb40c6eed7c
   m_configObjects: {}
