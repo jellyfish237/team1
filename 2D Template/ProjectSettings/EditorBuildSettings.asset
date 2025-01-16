@@ -15,4 +15,13 @@ EditorBuildSettings:
     path: Assets/MAIN FOLDER (MAKE SURE ABSOLUTELY NOBODY ELSE IS EDITTING THIS FOLDER
       IF YOU WANT TO CHANGE THIS)/game.unity
     guid: 03129a10a2328384c89b5424d5ce4159
+  - enabled: 1
+    path: Assets/oscar/Credits.unity
+    guid: 21be6e00f11a44540ac5378b96ecf7b1
+  - enabled: 1
+    path: Assets/oscar/oscar credits.unity
+    guid: 123b26596dc4b97498dad8d7d41822cc
+  - enabled: 1
+    path: Assets/carl/Credit Scene.unity
+    guid: b5e0a89baab00b049a07540761cf6688
   m_configObjects: {}
