@@ -20,6 +20,7 @@ public class Pausemenu : MonoBehaviour
         {
             Time.timeScale = 0;
             pausemenu.SetActive(true);
+            GetComponent<SummonItem>().canUseItem = false;
         }
     }
 
@@ -27,11 +28,16 @@ public class Pausemenu : MonoBehaviour
     {
         Time.timeScale = 1;
         pausemenu.SetActive(false);
+        GetComponent<SummonItem>().canUseItem = true;
     }
 
     public void SecretButton()
     {
-        Time.timeScale = 50;
+        Time.timeScale = 10;
         pausemenu.SetActive(false);
+    }
+    public void Quit()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 }

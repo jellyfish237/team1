@@ -22,7 +22,7 @@ public class EnemyHealth : MonoBehaviour
     public GameObject particles;
 
 
-    [SerializeField] FloatingHealthBar healthbar;
+    [SerializeField] FloatingHealthbar healthbar;
     public AnimationClip AnimationClip;
 
 
@@ -32,7 +32,7 @@ public class EnemyHealth : MonoBehaviour
         //health = Random.Range(minHP, maxHP);
         animator = GetComponent<Animator>();
         RB = GetComponent<Rigidbody2D>();
-        healthbar = GetComponentInChildren<FloatingHealthBar>();
+        healthbar = GetComponentInChildren<FloatingHealthbar>();
         //healthbar.UpdateHealthBar(health, maxHP);
     }
     void Update()
