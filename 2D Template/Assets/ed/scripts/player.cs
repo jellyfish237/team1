@@ -14,6 +14,7 @@ public class player : MonoBehaviour
     public bool can_take_damage = true;
     public float i_frames = 0f;
     public Camera cam;
+    public GameObject ui;
     [HideInInspector] public Vector2 currentDi;
     private SpriteRenderer spri;
     private Animator ani;
@@ -74,6 +75,7 @@ public class player : MonoBehaviour
     public IEnumerator damage_cooldown()
     {
         cam.GetComponent<camera_shake>().StartCoroutine1();
+        ui.GetComponent<camera_shake>().StartCoroutine1();
         can_take_damage = false;
         yield return new WaitForSeconds(i_frames);
         can_take_damage = true;
