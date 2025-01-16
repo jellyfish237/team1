@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e8b754cbef9711e4a8396032d73727d3
+guid: 0445501d7f4819a45b4cac9eab827cdf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -131,7 +131,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Instant Ghost Ramen_0
+      name: Keyghostdisappear_0
       rect:
         serializedVersion: 2
         x: 0
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eace38a175b30964fb9d351da1946f3f
-      internalID: -1574049264
+      spriteID: 1113d54f56ec22b4f8e19d3bac25b1fe
+      internalID: 2022135073
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Instant Ghost Ramen_1
+      name: Keyghostdisappear_1
       rect:
         serializedVersion: 2
         x: 32
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fd3e800f3f494c439059599c4f6bbaf
-      internalID: 1454309596
+      spriteID: 541075e29a63c0d48b9665b773ad522b
+      internalID: 1706957639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Instant Ghost Ramen_2
+      name: Keyghostdisappear_2
       rect:
         serializedVersion: 2
         x: 64
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2796d79ab5ae5f14e80b48cc7481b9bc
-      internalID: -31518736
+      spriteID: ac9c3b237cdfec245a0e0752ebd2982e
+      internalID: -131502294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Instant Ghost Ramen_3
+      name: Keyghostdisappear_3
       rect:
         serializedVersion: 2
         x: 96
@@ -208,50 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c6e39f6e6cfff14381f7139d7cd67a4
-      internalID: -1690533495
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Instant Ghost Ramen_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d1e93df417e2cff48a47acf35a38f732
-      internalID: 1326360293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Instant Ghost Ramen_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6532f7554b06c9641b84670e09784b0a
-      internalID: -791768793
+      spriteID: 17d198d64f845114eacd138b40ae3ff6
+      internalID: -262040869
       vertices: []
       indices: 
       edges: []
@@ -267,12 +225,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Instant Ghost Ramen_0: -1574049264
-      Instant Ghost Ramen_2: -31518736
-      Instant Ghost Ramen_4: 1326360293
-      Instant Ghost Ramen_1: 1454309596
-      Instant Ghost Ramen_3: -1690533495
-      Instant Ghost Ramen_5: -791768793
+      Keyghostdisappear_0: 2022135073
+      Keyghostdisappear_1: 1706957639
+      Keyghostdisappear_2: -131502294
+      Keyghostdisappear_3: -262040869
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

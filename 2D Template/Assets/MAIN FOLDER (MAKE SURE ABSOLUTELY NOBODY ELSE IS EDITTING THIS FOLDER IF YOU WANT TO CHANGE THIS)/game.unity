@@ -131,6 +131,22 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1787239360}
     m_Modifications:
+    - target: {fileID: 3351404409865876618, guid: eed80c9319e8ce046aece9bf56358732, type: 3}
+      propertyPath: rooms.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3351404409865876618, guid: eed80c9319e8ce046aece9bf56358732, type: 3}
+      propertyPath: rooms.Array.data[5]
+      value: 
+      objectReference: {fileID: 3932423674508711380, guid: 91e639b7e39fafa41978f825f219320c, type: 3}
+    - target: {fileID: 3351404409865876618, guid: eed80c9319e8ce046aece9bf56358732, type: 3}
+      propertyPath: rooms.Array.data[6]
+      value: 
+      objectReference: {fileID: 3932423674508711380, guid: cde998387e5c8dd45ad618ba2d968e29, type: 3}
+    - target: {fileID: 3351404409865876618, guid: eed80c9319e8ce046aece9bf56358732, type: 3}
+      propertyPath: rooms.Array.data[7]
+      value: 
+      objectReference: {fileID: 3932423674508711380, guid: 28ade846a15240247b22a62f0062d427, type: 3}
     - target: {fileID: 4026518823469519113, guid: eed80c9319e8ce046aece9bf56358732, type: 3}
       propertyPath: m_Name
       value: grid
