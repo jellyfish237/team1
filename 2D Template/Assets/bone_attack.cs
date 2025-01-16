@@ -7,6 +7,7 @@ public class bone_attack : MonoBehaviour
     private bool look_at_player = true;
     public GameObject player;
     public Rigidbody2D rb;
+    public GameObject laser;
 
     void Start()
     {
@@ -24,7 +25,8 @@ public class bone_attack : MonoBehaviour
     {
         yield return new WaitForSeconds(2.0f);
         look_at_player = false;
-        rb.AddForce(14 * transform.up, ForceMode2D.Impulse);
+        laser.SetActive(false);
+        rb.AddForce(20 * transform.up, ForceMode2D.Impulse);
         yield return new WaitForSeconds(1.0f);
         Destroy(gameObject);
     }
@@ -34,7 +36,7 @@ public class bone_attack : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             player.GetComponent<player>().StartDamageCooldown();
-            GetComponent<PlayerHealth>().health -= 8;
+            player.GetComponent<PlayerHealth>().health -= 8;
         }
     }
 }
