@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 1193691541037888802}
   m_Layer: 0
   m_Name: bone_attack
-  m_TagString: Untagged
+  m_TagString: Enemy_Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,6 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   rb: {fileID: 579834146583107209}
+  laser: {fileID: 6345554057874856496}
 --- !u!1 &5045706656997038624
 GameObject:
   m_ObjectHideFlags: 0

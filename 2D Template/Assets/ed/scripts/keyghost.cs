@@ -44,7 +44,7 @@ public class keyghost : MonoBehaviour
     {
         GameObject summon_attack = Instantiate(ghost_bone_attack, new Vector3(transform.position.x, transform.position.y + 2, 0), transform.rotation);
         summon_attack.GetComponent<bone_attack>().player = player;
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(6.0f);
         StartCoroutine(bone_loop());
     }
 }
