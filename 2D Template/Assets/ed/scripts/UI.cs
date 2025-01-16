@@ -14,6 +14,8 @@ public class UI : MonoBehaviour
     public GameObject player;
     public GameObject key_ghost;
 
+    public GameObject hurt_screen;
+
     public Animator animator;
     void Start()
     {
@@ -39,13 +41,15 @@ public class UI : MonoBehaviour
         }
     }
 
-    void hurt()
+    public void hurt()
     {
         StartCoroutine(hurt_cor());
     }
 
     IEnumerator hurt_cor()
     {
-        yield return null;
+        hurt_screen.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        hurt_screen.SetActive(false);
     }
 }

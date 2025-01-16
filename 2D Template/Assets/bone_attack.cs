@@ -28,4 +28,13 @@ public class bone_attack : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         Destroy(gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            player.GetComponent<player>().StartDamageCooldown();
+            GetComponent<PlayerHealth>().health -= 8;
+        }
+    }
 }
