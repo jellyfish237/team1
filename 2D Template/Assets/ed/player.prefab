@@ -65,6 +65,7 @@ MonoBehaviour:
   can_take_damage: 1
   i_frames: 0
   cam: {fileID: 5529566792133908755}
+  ui: {fileID: 3984552785830633391}
   currentDi: {x: 0, y: 0}
 --- !u!114 &1797798299283198561
 MonoBehaviour:
@@ -82,6 +83,7 @@ MonoBehaviour:
   itempos: {fileID: 1789670832495692755}
   Itemout: 32
   current_item: {fileID: 0}
+  canUseItem: 1
   activeTimer: 0
   mirrorTime: 5
 --- !u!212 &5396919180261203273
@@ -725,6 +727,11 @@ RectTransform:
 --- !u!4 &3096123569816974573 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5605302785467309143, guid: 149e80659249fa84eb98ce0cc224f42f, type: 3}
+  m_PrefabInstance: {fileID: 7439289991256008890}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3984552785830633391 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5797913315918526229, guid: 149e80659249fa84eb98ce0cc224f42f, type: 3}
   m_PrefabInstance: {fileID: 7439289991256008890}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8125241339847991795

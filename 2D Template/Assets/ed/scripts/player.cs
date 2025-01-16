@@ -75,17 +75,9 @@ public class player : MonoBehaviour
     public IEnumerator damage_cooldown()
     {
         cam.GetComponent<camera_shake>().StartCoroutine1();
-        ui.GetComponent<camera_shake>().StartCoroutine1();
+        ui.GetComponent<UI>().hurt();
         can_take_damage = false;
         yield return new WaitForSeconds(i_frames);
         can_take_damage = true;
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy_Attack"))
-        {
-            StartDamageCooldown();
-            GetComponent<PlayerHealth>().health -= 8;
-        }
     }
 }
