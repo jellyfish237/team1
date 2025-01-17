@@ -12,6 +12,9 @@ public class keyghost : MonoBehaviour
     public bool attacking_player = false;
     public int ghosts_nearby = 0;
     public bool can_take_damage = false;
+    public bool is_dead = false;
+
+    public GameObject key;
 
     private void Start()
     {
@@ -19,9 +22,12 @@ public class keyghost : MonoBehaviour
     }
     void Update()
     {
-        if (enemy_hp.GetComponent<EnemyHealth>().health <= 0)
+        if (enemy_hp.GetComponent<EnemyHealth>().health <= 0 && is_dead == false)
         {
+            is_dead = true;
             Debug.Log("spawned a key");
+            GameObject spawned_key = Instantiate(key, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
+            spawned_key.transform.parent = spawned_key.transform;
         }
         if (ghosts_nearby == 0)
         {

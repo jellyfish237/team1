@@ -19,6 +19,7 @@ public class player : MonoBehaviour
     private SpriteRenderer spri;
     private Animator ani;
 
+    public bool has_key = false;
     private void Start()
     {
         ani = GetComponent<Animator>();
