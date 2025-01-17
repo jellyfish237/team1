@@ -38,7 +38,7 @@ public class EnemyHealth : MonoBehaviour
     void Update()
     {
 
-        if (isInLight && GetComponent<EnemyMovement>().hasLineOfSight == true)
+        if (isInLight)
         {
             takingDamage = true;
             health -= Time.deltaTime * currentMirror.damageSpeed;

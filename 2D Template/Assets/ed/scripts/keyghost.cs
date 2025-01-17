@@ -11,6 +11,7 @@ public class keyghost : MonoBehaviour
     public GameObject ghost_bone_attack;
     public bool attacking_player = false;
     public int ghosts_nearby = 0;
+    public bool can_take_damage = false;
 
     private void Start()
     {
@@ -21,6 +22,14 @@ public class keyghost : MonoBehaviour
         if (enemy_hp.GetComponent<EnemyHealth>().health <= 0)
         {
             Debug.Log("spawned a key");
+        }
+        if (ghosts_nearby == 0)
+        {
+            can_take_damage = true;
+        }
+        else
+        {
+            can_take_damage = false;
         }
     }
     public void StartAttacking()
@@ -37,7 +46,7 @@ public class keyghost : MonoBehaviour
     {
         GameObject summon_attack = Instantiate(ghost_summon_attack, new Vector3(player.transform.position.x, player.transform.position.y, 0), player.transform.rotation);
         summon_attack.GetComponent<spawn_ghost_attack>().key_ghost = gameObject;
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(8.0f);
         StartCoroutine(summon_loop());
     }
     public IEnumerator bone_loop()
