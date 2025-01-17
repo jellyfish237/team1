@@ -36,10 +36,11 @@ public class PlayerHealth : MonoBehaviour
         }
         if (isDead == true)
         {
-            //Time.timeScale = 0;
+            Time.timeScale = 0;
             ani.SetBool("isDead", true);
             deathUI.SetActive(true);
             playerUI.SetActive(false);
+            GetComponent<SummonItem>().canUseItem = false;
 
 
         }
