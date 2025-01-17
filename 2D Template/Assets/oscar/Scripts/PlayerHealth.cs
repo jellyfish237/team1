@@ -41,6 +41,7 @@ public class PlayerHealth : MonoBehaviour
             deathUI.SetActive(true);
             playerUI.SetActive(false);
             GetComponent<SummonItem>().canUseItem = false;
+            GetComponent<player>().can_move = false;
 
 
         }
