@@ -33,7 +33,7 @@ public class Pausemenu : MonoBehaviour
 
     public void SecretButton()
     {
-        Time.timeScale = 10;
+        Time.timeScale = 4;
         pausemenu.SetActive(false);
     }
     public void Quit()
