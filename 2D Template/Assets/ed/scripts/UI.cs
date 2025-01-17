@@ -35,6 +35,8 @@ public class UI : MonoBehaviour
 
         animator.SetFloat("distance", Vector2.Distance(player.transform.position, key_ghost.transform.position));
 
+        Debug.Log(animator.GetFloat("distance"));
+
         if (animator.GetFloat("distance") <= 25f)
         {
             key_ghost.GetComponent<keyghost>().StartAttacking();

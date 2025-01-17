@@ -603,6 +603,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Damage Particle
       objectReference: {fileID: 0}
+    - target: {fileID: 6329067039787679905, guid: 32b03287aeb6ce94e80336f615d96ba8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329067039787679906, guid: 32b03287aeb6ce94e80336f615d96ba8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329067039787679907, guid: 32b03287aeb6ce94e80336f615d96ba8, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329067039787679907, guid: 32b03287aeb6ce94e80336f615d96ba8, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329067039787679907, guid: 32b03287aeb6ce94e80336f615d96ba8, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329067039787679907, guid: 32b03287aeb6ce94e80336f615d96ba8, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.b
+      value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329067039787679907, guid: 32b03287aeb6ce94e80336f615d96ba8, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.g
+      value: 0.5188679
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329067039787679907, guid: 32b03287aeb6ce94e80336f615d96ba8, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.r
+      value: 0.5188679
+      objectReference: {fileID: 0}
     - target: {fileID: 6329067039787679908, guid: 32b03287aeb6ce94e80336f615d96ba8, type: 3}
       propertyPath: m_RootOrder
       value: -1
