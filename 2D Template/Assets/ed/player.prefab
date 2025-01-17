@@ -200,6 +200,8 @@ MonoBehaviour:
   health: 100
   maxHP: 100
   healthParticle: {fileID: 5298179186254537015}
+  deathUI: {fileID: 0}
+  playerUI: {fileID: 3984552785830633391}
 --- !u!114 &5711052692776294148
 MonoBehaviour:
   m_ObjectHideFlags: 0

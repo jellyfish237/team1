@@ -59,10 +59,6 @@ public class EnemyHealth : MonoBehaviour
             animator.SetTrigger("Dead");
             StartCoroutine(die());
         }
-        if(ghostDead == true)
-        {
-
-        }
     }
     IEnumerator die()
     {

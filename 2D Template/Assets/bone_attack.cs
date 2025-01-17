@@ -23,11 +23,24 @@ public class bone_attack : MonoBehaviour
     }
     public IEnumerator attack()
     {
-        yield return new WaitForSeconds(2.0f);
+        for (int i = 0; i < 8; i++)
+        {
+            yield return new WaitForSeconds(0.04f);
+            laser.SetActive(false);
+            yield return new WaitForSeconds(0.04f);
+            laser.SetActive(true);
+        }
         look_at_player = false;
+        for (int i = 0; i < 4; i++)
+        {
+            yield return new WaitForSeconds(0.04f);
+            laser.SetActive(false);
+            yield return new WaitForSeconds(0.04f);
+            laser.SetActive(true);
+        }
         laser.SetActive(false);
-        rb.AddForce(13 * transform.up, ForceMode2D.Impulse);
-        yield return new WaitForSeconds(1.0f);
+        rb.AddForce(23 * transform.up, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(2.0f);
         Destroy(gameObject);
     }
 
