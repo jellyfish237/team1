@@ -40,6 +40,7 @@ public class PlayerHealth : MonoBehaviour
             ani.SetBool("isDead", true);
             deathUI.SetActive(true);
             playerUI.SetActive(false);
+            GetComponent<SummonItem>().canUseItem = false;
 
 
         }
