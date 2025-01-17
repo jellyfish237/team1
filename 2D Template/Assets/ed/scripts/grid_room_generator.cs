@@ -186,8 +186,7 @@ public class grid_room_generator : MonoBehaviour
 
     public void SpawnKeyGhost()
     {
-        rng = Random.Range(0, Grid.Length);
-        GameObject new_keyghost = Instantiate(keyghost, Grid[rng].transform.position, Grid[rng].transform.rotation);
+        GameObject new_keyghost = Instantiate(keyghost, Grid[9].transform.position, Grid[rng].transform.rotation);
     }
     
 

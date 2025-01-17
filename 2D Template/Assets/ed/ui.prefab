@@ -1513,6 +1513,8 @@ MonoBehaviour:
   key_ghost: {fileID: 0}
   hurt_screen: {fileID: 3883681154538937312}
   animator: {fileID: 4598589304827085365}
+  got_key: {fileID: 2800000, guid: 9d023a41c5e093240a9f00a8f87cc786, type: 3}
+  key_sprite: {fileID: 7390746707850781497}
 --- !u!1 &5867622808130647217
 GameObject:
   m_ObjectHideFlags: 0

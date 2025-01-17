@@ -4954,8 +4954,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a36ca298100a642a8a7f2f73ed2823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maxHP: 100
+  health: 150
+  maxHP: 150
   isInLight: 0
   currentMirror: {fileID: 0}
   pushBack: 1
@@ -5061,6 +5061,8 @@ MonoBehaviour:
   attacking_player: 0
   ghosts_nearby: 0
   can_take_damage: 0
+  is_dead: 0
+  key: {fileID: 3212696948620689555, guid: 72090ccf729d62640b4349de5bf2941a, type: 3}
 --- !u!114 &2946503158674686390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10099,7 +10101,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 7
 --- !u!114 &6965165492003324235
 MonoBehaviour:
   m_ObjectHideFlags: 0

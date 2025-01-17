@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
-using UnityEngine.UI;
 
 public class UI : MonoBehaviour
 {
@@ -17,6 +16,9 @@ public class UI : MonoBehaviour
     public GameObject hurt_screen;
 
     public Animator animator;
+
+    public Texture2D got_key;
+    public GameObject key_sprite;
     void Start()
     {
         key_ghost = GameObject.FindGameObjectWithTag("key_ghost");
@@ -40,6 +42,10 @@ public class UI : MonoBehaviour
         if (animator.GetFloat("distance") <= 25f)
         {
             key_ghost.GetComponent<keyghost>().StartAttacking();
+        }
+        if (player.GetComponent<player>().has_key == true)
+        {
+            key_sprite.GetComponent<Image>().image = got_key;
         }
     }
 
